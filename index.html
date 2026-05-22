@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Inter:wght@400;500;600&family=Caveat:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Inter:wght@400;500;600&family=Caveat:wght@700&family=Goldman:wght@400;700&display=swap"
         rel="stylesheet">
 
     <!-- Bootstrap CSS -->
@@ -18,6 +18,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="background.css">
 
     <!-- JS Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -26,11 +27,23 @@
 </head>
 
 <body>
-    <div id="canvas-container"></div>
-    <div class="system-grid"></div>
-    <div class="background-glow glow1"></div>
-    <div class="background-glow glow2"></div>
-    <div class="background-glow glow3"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <a href="#hero" class="scroll-dot active" data-section="hero" title="Home"></a>
+        <a href="#about-us" class="scroll-dot" data-section="about-us" title="About Us"></a>
+        <a href="#core-problem" class="scroll-dot" data-section="core-problem" title="Core Problem"></a>
+        <a href="#services" class="scroll-dot" data-section="services" title="Services"></a>
+        <a href="#roadmap" class="scroll-dot" data-section="roadmap" title="TGE"></a>
+        <a href="#technology" class="scroll-dot" data-section="technology" title="Technology"></a>
+        <a href="#team" class="scroll-dot" data-section="team" title="Team"></a>
+        <a href="#faq" class="scroll-dot" data-section="faq" title="FAQ"></a>
+        <a href="#contact" class="scroll-dot" data-section="contact" title="Contact"></a>
+    </div>
 
     <div id="loader">
         <div class="counter">00</div>
@@ -52,12 +65,11 @@
                     <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="core-problem.html">Core Problems</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tge-plan.html">TGE Pattern</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#roadmap">TGE </a></li>
                     <li class="nav-item"><a class="nav-link" href="#technology">Tech</a></li>
-                    <li class="nav-item"><a class="nav-link" href="roadmap.html">Road Map</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kols.html">KOLs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="team.html">Meet the Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -66,7 +78,9 @@
     <main>
 
         <!-- 2. Hero Section -->
-        <section class="hero" style="padding-top: 10rem;">
+        <section class="hero" id="hero" style="padding-top: 10rem;">
+            <div id="canvas-container"></div>
+            <div class="system-grid"></div>
             <div class="monumental-vertical">SWITCH</div>
             <div class="container">
                 <div class="row">
@@ -80,8 +94,8 @@
                                 </svg>
                                 <span class="meta-label">BUILDING WEB3 GROWTH THAT LASTS</span>
                             </div>
-                            <h1>AI-powered retention systems, community intelligence, and sustainable growth strategies
-                                for modern Web3 ecosystems.</h1>
+                            <h1>TheSwitchLabs is redefining Web3 through AI, innovation, and sustainable community
+                                growth. Ensure your presence and join the future.</h1>
                             <div class="hero-buttons">
                                 <a href="#about-us" class="btn"><span>Learn More</span></a>
                                 <a href="#contact" class="btn"><span>Join Us</span></a>
@@ -120,49 +134,89 @@
 
         <!-- 4. Core Problems -->
         <section id="core-problems" class="core-problems-section reveal">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-2 col-lg-1 d-none d-md-flex align-items-center justify-content-center">
-                        <div class="vertical-title-container">
-                            <h2 class="vertical-title">Core Problem</h2>
+            <div class="container">
+                <div class="section-heading-container" style="justify-content: flex-start; text-align: left;">
+                    <h2 class="section-heading">CORE PROBLEM</h2>
+                </div>
+                <div class="core-problems-intro">
+                    <h3>The problem is not visibility.<br>It is <span class="text-pink">RETENTION</span>.</h3>
+                    <p class="panel-desc">In web3, growth often looks impressive at first. Thousands claim rewards,
+                        liquidity flows in, and engagement spikes. But when incentives slow down, so does participation.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="problem-card">
+                            <div class="problem-card-icon">
+                                <span class="icon-number">01</span>
+                            </div>
+                            <div class="problem-card-content">
+                                <h4>Incentive-Driven Growth</h4>
+                                <p>Thousands of wallets claim rewards and liquidity flows in quickly, creating an
+                                    illusion of sustainable growth.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-10 col-lg-11">
-                        <div class="problem-content">
-                            <h3 class="problem-heading">
-                                <span class="line1-anim">The problem is not visibility.</span><br>
-                                <span class="line2-anim">It is <span class="text-pink">RETENTION</span>.</span><br>
-                                <span class="line3-anim">In web3, growth often looks impressive at first.</span>
-                            </h3>
-                            <ul class="problem-initial-list">
-                                <li>Thousands of wallets claim rewards</li>
-                                <li>Liquidity flows in quickly</li>
-                                <li>Social engagement increases</li>
-                            </ul>
-                            <p class="temporary-note">But most of that activity is temporary.<br>When incentives slow
-                                down, so does participation.</p>
-                            <hr class="dashed-divider">
-                            <div class="row problem-breakdown">
-                                <div class="col-lg-6 founder-col">
-                                    <h4>For founders, this means:</h4>
-                                    <ul>
-                                        <li>Constant spending on new users</li>
-                                        <li>Pressure to increase emissions</li>
-                                        <li>Difficulty forecasting long-term stability</li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 community-col">
-                                    <h4>For communities, this means:</h4>
-                                    <ul>
-                                        <li>Short cycles</li>
-                                        <li>Unclear value</li>
-                                        <li>Stress from jumping between projects</li>
-                                    </ul>
-                                </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="problem-card">
+                            <div class="problem-card-icon">
+                                <span class="icon-number">02</span>
+                            </div>
+                            <div class="problem-card-content">
+                                <h4>Temporary Engagement</h4>
+                                <p>Social engagement increases during campaigns but drops sharply when incentives slow
+                                    down.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="problem-card">
+                            <div class="problem-card-icon">
+                                <span class="icon-number">03</span>
+                            </div>
+                            <div class="problem-card-content">
+                                <h4>Founder Pressure</h4>
+                                <p>Constant spending on new users, pressure to increase emissions, and difficulty
+                                    forecasting stability.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="problem-card">
+                            <div class="problem-card-icon">
+                                <span class="icon-number">04</span>
+                            </div>
+                            <div class="problem-card-content">
+                                <h4>Community Stress</h4>
+                                <p>Short cycles, unclear value, and stress from constantly jumping between projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="problem-card">
+                            <div class="problem-card-icon">
+                                <span class="icon-number">05</span>
+                            </div>
+                            <div class="problem-card-content">
+                                <h4>Lack of Loyalty</h4>
+                                <p>Users follow rewards rather than building genuine connections with projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="problem-card">
+                            <div class="problem-card-icon">
+                                <span class="icon-number">06</span>
+                            </div>
+                            <div class="problem-card-content">
+                                <h4>Unsustainable Model</h4>
+                                <p>The current model relies on constant token emissions and cannot scale long-term.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
         <!-- 5. Services -->
@@ -319,81 +373,77 @@
         <!-- 7. Technology -->
         <section id="technology" class="reveal">
             <div class="container">
-                <div class="section-heading-container">
-                    <h2 class="section-heading">Our Tech Stack</h2>
+                <div class="section-heading-container" style="justify-content: flex-start; text-align: left;">
+                    <h2 class="section-heading">TECHNOLOGY</h2>
                 </div>
-                <div class="row gy-4">
-                    <div class="col-md-6">
-                        <div class="panel">
-                            <h4 class="panel-title">AI & Machine Learning</h4>
-                            <p class="panel-desc">Predictive analytics and behavioral modeling to understand and
-                                anticipate community needs.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="panel">
-                            <h4 class="panel-title">Blockchain Integration</h4>
-                            <p class="panel-desc">Seamless integration with on-chain data to provide a holistic view of
-                                your ecosystem.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="panel">
-                            <h4 class="panel-title">Analytics Systems</h4>
-                            <p class="panel-desc">Real-time dashboards and reporting to track KPIs and measure success.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="panel">
-                            <h4 class="panel-title">Community Intelligence</h4>
-                            <p class="panel-desc">Proprietary algorithms to identify key influencers, trends, and
-                                opportunities within your community.</p>
-                        </div>
-                    </div>
+                <div class="tech-intro" style="text-align: left; margin: 0 0 3rem 0;">
+                    <h3 class="tech-title">FOUR TOOLS, <span class="text-pink">ONE WIN</span></h3>
+                    <p class="panel-desc">The agency's tech stack is designed for scalability, with a focus on
+                        user-friendly interfaces that "make it thrive" in competitive markets</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- 8. Roadmap -->
-        <section id="roadmap-preview" class="reveal">
-            <div class="container">
-                <div class="section-heading-container">
-                    <h2 class="section-heading">Our Journey Ahead</h2>
-                </div>
-                <div class="row gy-4 text-center">
-                    <div class="col-md-3">
-                        <div class="panel">
-                            <h4 class="panel-title">Pre-Launch</h4>
-                            <p class="panel-desc">Foundation and Strategy</p>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="tech-card">
+                            <div class="tech-card-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+                                    <path d="M8.5 8.5a2.5 2.5 0 0 0 0 5"></path>
+                                    <path d="M15.5 15.5a2.5 2.5 0 0 0 0-5"></path>
+                                </svg>
+                            </div>
+                            <h4 class="tech-card-title">AI and Machine Learning</h4>
+                            <p class="tech-card-desc">For predictive analytics on user behavior, enabling proactive
+                                retention strategies</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="panel">
-                            <h4 class="panel-title">Launch</h4>
-                            <p class="panel-desc">TGE and Platform Rollout</p>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="tech-card">
+                            <div class="tech-card-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <h4 class="tech-card-title">Blockchain Integration</h4>
+                            <p class="tech-card-desc">Support for multi-chain opportunities, ensuring secure and
+                                transparent interactions</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="panel">
-                            <h4 class="panel-title">Growth</h4>
-                            <p class="panel-desc">Ecosystem Expansion</p>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="tech-card">
+                            <div class="tech-card-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                            <h4 class="tech-card-title">Data-Driven Insights</h4>
+                            <p class="tech-card-desc">Tools to analyze engagement metrics from platforms like X,
+                                identifying patterns for long-term loyalty</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="panel">
-                            <h4 class="panel-title">Expansion</h4>
-                            <p class="panel-desc">Future Innovations</p>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="tech-card">
+                            <div class="tech-card-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                </svg>
+                            </div>
+                            <h4 class="tech-card-title">Visual and Media Tools</h4>
+                            <p class="tech-card-desc">High-quality teasers (e.g., videos and images) to build
+                                anticipation without overhyping</p>
                         </div>
                     </div>
-                </div>
-                <div class="text-center mt-5">
-                    <a href="roadmap.html" class="btn btn-secondary"><span>View Full Roadmap</span></a>
                 </div>
             </div>
         </section>
-
-        <!-- 9. Why Us -->
+        <!-- 9. Why Us
         <section id="why-us" class="reveal">
             <div class="container">
                 <div class="section-heading-container">
@@ -423,94 +473,455 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <!-- 10. KOLs -->
-        <section id="kols" class="reveal">
+        <!-- 10. Team & KOLs -->
+        <section id="team" class="reveal">
             <div class="container">
                 <div class="section-heading-container">
-                    <h2 class="section-heading">Trusted by the Best</h2>
+                    <h2 class="section-heading">OUR TEAM</h2>
                 </div>
-                <div class="row gy-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="panel text-center">
-                            <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="KOL Avatar">
-                            <h4 class="panel-title">KOL Name</h4>
-                            <p class="panel-desc">Creator / Influencer</p>
-                            <div>
-                                <!-- Social Icons Placeholder -->
+
+                <!-- KOLs Section -->
+                <div class="kols-section">
+                    <h3 class="section-subtitle">Key Opinion Leaders</h3>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="kol-card">
+                                <img src="assets/Nipherme.jpg" class="kol-avatar" alt="Nipherme">
+                                <h4 class="kol-name">Nipherme</h4>
+                                <p class="kol-title">Co-Founder / CEO</p>
+                                <p class="kol-desc">Visionary leader with a track record in crypto influence and project
+                                    development. Known for high-engagement content on X, with over 72,000 followers.
+                                    Drives the agency's strategic direction and public teasers.</p>
+                                <a href="https://twitter.com/NiphermeDav" target="_blank" class="kol-twitter">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                        </path>
+                                    </svg>
+                                    @NiphermeDav
+                                </a>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="panel text-center">
-                                <img src="https://via.placeholder.com/100" class="rounded-circle mb-3"
-                                    alt="Partner Avatar">
-                                <h4 class="panel-title">Partner Name</h4>
-                                <p class="panel-desc">Ecosystem Partner</p>
-                                <div>
-                                    <!-- Social Icons Placeholder -->
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <div class="panel text-center">
-                                    <img src="https://via.placeholder.com/100" class="rounded-circle mb-3"
-                                        alt="Community Avatar">
-                                    <h4 class="panel-title">Community Name</h4>
-                                    <p class="panel-desc">Community Partner</p>
-                                    <div>
-                                        <!-- Social Icons Placeholder -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center mt-5">
-                                <a href="kols.html" class="btn btn-secondary"><span>View All KOLs</span></a>
+                        <div class="col-md-4">
+                            <div class="kol-card">
+                                <img src="assets/Nolimit.jpg" class="kol-avatar" alt="NOLIMIT">
+                                <h4 class="kol-name">NOLIMIT</h4>
+                                <p class="kol-title">Partner / COO</p>
+                                <p class="kol-desc">Operations expert, ensuring seamless execution. Awarded "Best in
+                                    Philosophy" multiple times, bringing a thoughtful approach to team dynamics and
+                                    scaling.</p>
+                                <a href="https://twitter.com/LIMITLESSDAM" target="_blank" class="kol-twitter">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                        </path>
+                                    </svg>
+                                    @LIMITLESSDAM
+                                </a>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="kol-card">
+                                <img src="assets/Jayne.jpg" class="kol-avatar" alt="Jayne">
+                                <h4 class="kol-name">Jayne</h4>
+                                <p class="kol-title">Co-Founder</p>
+                                <p class="kol-desc">Technical co-founder focused on blockchain integration and
+                                    innovation. Emphasizes presence and community activation in public communications.
+                                </p>
+                                <a href="https://twitter.com/0xjayn" target="_blank" class="kol-twitter">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                        </path>
+                                    </svg>
+                                    @0xjayn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider Line -->
+                <div class="team-divider"></div>
+
+                <!-- Team Section -->
+                <div class="team-section">
+                    <h3 class="section-subtitle">Meet the Team</h3>
+                    <div class="row g-4">
+                        <!-- KOLs as Team Cards -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="https://twitter.com/NiphermeDav" target="_blank" class="team-card">
+                                <img src="assets/Nipherme-Founder-CEO.jpg" class="team-image" alt="Nipherme">
+                                <div class="team-info">
+                                    <h4 class="team-name">Nipherme</h4>
+                                    <p class="team-role">Founder / CEO</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="https://twitter.com/LIMITLESSDAM" target="_blank" class="team-card">
+                                <img src="assets/NoLimit-Chief-of-operation.jpg" class="team-image" alt="NOLIMIT">
+                                <div class="team-info">
+                                    <h4 class="team-name">NOLIMIT</h4>
+                                    <p class="team-role">Chief of Operation</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="https://twitter.com/0xjayn" target="_blank" class="team-card">
+                                <img src="assets/Jayne-Co-Founder.jpg" class="team-image" alt="Jayne">
+                                <div class="team-info">
+                                    <h4 class="team-name">Jayne</h4>
+                                    <p class="team-role">Co-Founder</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Other Team Members -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="#" target="_blank" class="team-card">
+                                <img src="assets/Dara-Growth-Manager.jpg" class="team-image" alt="Dara">
+                                <div class="team-info">
+                                    <h4 class="team-name">Dara</h4>
+                                    <p class="team-role">Growth Manager</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="#" target="_blank" class="team-card">
+                                <img src="assets/Doingz-Partnership-and-Marketing.jpg" class="team-image" alt="Doingz">
+                                <div class="team-info">
+                                    <h4 class="team-name">Doingz</h4>
+                                    <p class="team-role">Partnership & Marketing</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="#" target="_blank" class="team-card">
+                                <img src="assets/GG-Intern.jpg" class="team-image" alt="GG">
+                                <div class="team-info">
+                                    <h4 class="team-name">GG</h4>
+                                    <p class="team-role">Intern</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="#" target="_blank" class="team-card">
+                                <img src="assets/Hassan-Content-and-design-Operation.jpg" class="team-image"
+                                    alt="Hassan">
+                                <div class="team-info">
+                                    <h4 class="team-name">Hassan</h4>
+                                    <p class="team-role">Content & Design Operation</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="#" target="_blank" class="team-card">
+                                <img src="assets/Kahuna-Intern.jpg" class="team-image" alt="Kahuna">
+                                <div class="team-info">
+                                    <h4 class="team-name">Kahuna</h4>
+                                    <p class="team-role">Intern</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="#" target="_blank" class="team-card">
+                                <img src="assets/Mide-Head-Of_design.jpg" class="team-image" alt="Mide">
+                                <div class="team-info">
+                                    <h4 class="team-name">Mide</h4>
+                                    <p class="team-role">Head of Design</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="#" target="_blank" class="team-card">
+                                <img src="assets/Perpetual-collaboration-Manager.jpg" class="team-image"
+                                    alt="Perpetual">
+                                <div class="team-info">
+                                    <h4 class="team-name">Perpetual</h4>
+                                    <p class="team-role">Collaboration Manager</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="#" target="_blank" class="team-card">
+                                <img src="assets/Zek-Partnership-and-Marketing.jpg" class="team-image" alt="Zek">
+                                <div class="team-info">
+                                    <h4 class="team-name">Zek</h4>
+                                    <p class="team-role">Partnership & Marketing</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- 11. Team -->
-        <section id="team-preview" class="reveal">
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section reveal">
             <div class="container">
-                <div class="section-heading-container">
-                    <h2 class="section-heading">The Minds Behind the Mission</h2>
+                <div class="section-heading-container" style="justify-content: flex-start; text-align: left;">
+                    <h2 class="section-heading">FAQ</h2>
+
                 </div>
-                <div class="row gy-4 justify-content-center">
-                    <div class="col-md-4 text-center">
-                        <div class="panel">
-                            <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="Team Member">
-                            <h4 class="panel-title">CEO</h4>
-                            <p class="panel-desc">Visionary Leader</p>
-                            <!-- Social Icons Placeholder -->
+
+                <div class="faq-header-content">
+                    <h3 class="faq-title">Questions, <span class="text-pink">Answered</span></h3>
+                    <p class="faq-subtitle">Everything you need to know about Switch</p>
+                    <p class="faq-header-cta">Still curious? <a href="#" class="text-pink">Get In Touch</a></p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne">
+                                    <span class="faq-question">What services does Switch Labs provide?</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Switch Labs provides AI-powered retention systems, opportunity platforms, AI agent
+                                    development, and consulting services for Web3 ecosystems.
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <div class="panel">
-                            <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="Team Member">
-                            <h4 class="panel-title">COO</h4>
-                            <p class="panel-desc">Operations Expert</p>
-                            <!-- Social Icons Placeholder -->
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo">
+                                    <span class="faq-question">How does your retention system work?</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our AI-powered analytics identify churn risks and personalize user experiences,
+                                    helping you switch from hype-driven campaigns to sustainable loyalty programs.
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <div class="panel">
-                            <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="Team Member">
-                            <h4 class="panel-title">Co-Founder</h4>
-                            <p class="panel-desc">Lead Strategist</p>
-                            <!-- Social Icons Placeholder -->
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree">
+                                    <span class="faq-question">What makes your approach different?</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We focus on long-term retention rather than short-term growth. Our data-driven
+                                    strategies help build genuine community connections that last beyond incentive
+                                    campaigns.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour">
+                                    <span class="faq-question">Do you work with all types of Web3 projects?</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we work with DeFi protocols, NFT projects, DAOs, gaming platforms, and other
+                                    Web3 ecosystems looking to improve user retention and community engagement.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive">
+                                    <span class="faq-question">How can I get started with Switch Labs?</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can book a call through our contact section or reach out via our social
+                                    channels. We'll discuss your project's specific needs and create a tailored
+                                    retention strategy.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-5">
-                    <a href="team.html" class="btn btn-secondary"><span>Meet the Team</span></a>
+            </div>
+        </section>
+
+        <!-- 17. Contact -->
+        <section id="contact" class="reveal">
+            <div class="container">
+                <div class="section-heading-container" style="justify-content: flex-start; text-align: left;">
+                    <h2 class="section-heading">CONTACT</h2>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <div class="contact-info">
+                            <h3 class="contact-title">Let's <span class="text-pink">Connect</span></h3>
+                            <p class="contact-desc">Have a project in mind? We'd love to hear from you.</p>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>hello@switchlabs.io</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Twitter</h4>
+                                    <p>@theswitchlabs</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>LinkedIn</h4>
+                                    <p>Switch Labs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" class="form-control" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Email</label>
+                                <input type="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" class="form-control" placeholder="Enter subject">
+                            </div>
+                            <div class="form-group">
+                                <label>Your Message</label>
+                                <textarea class="form-control" rows="5" placeholder="Enter your message"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn"><span>Send Message</span></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- 16. Footer -->
-        <footer class="pt-5 pb-5">
-            <div class="container text-center">
-                <p class="meta-label">&copy; 2026 <span class="text-pink">The Switch Labs</span>. All Rights
-                    Reserved.</p>
+        <footer class="footer-section">
+            <div class="footer-header">
+                <div class="footer-bg-large">SWITCH</div>
+            </div>
+            <div class="container">
+                <div class="row gy-6">
+                    <div class="col-lg-4">
+                        <div class="footer-brand">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <img src="assets/logo.jpg" alt="Logo" class="footer-logo">
+                                <span class="h4 mb-0 fw-bold">SWITCH LABS</span>
+                            </div>
+                            <p class="footer-desc">Web3 agency specializing in helping cryptocurrency and DeFi projects
+                                achieve sustainable growth through Strategic Marketing, Community Building, and Brand
+                                Development.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="footer-heading">COMPANY</h5>
+                        <ul class="footer-links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#team">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="footer-heading">GET IN TOUCH</h5>
+                        <div class="footer-social-links">
+                            <a href="#" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="footer-divider">
+                <div class="footer-bottom">
+                    <p class="mb-0">&copy; 2026 SWITCH LABS. All rights reserved.</p>
+                    <div class="footer-social-handle">X @theswitchlabs</div>
+                </div>
             </div>
         </footer>
 

@@ -1,3 +1,30 @@
+// Custom Cursor
+document.addEventListener('DOMContentLoaded', () => {
+    const cursor = document.querySelector('.custom-cursor');
+    const cursorDot = document.querySelector('.custom-cursor-dot');
+
+    if (cursor && cursorDot) {
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+        });
+
+        // Add hover effect to interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .btn, input, textarea, .team-card, .kol-twitter');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+    }
+});
+
 // Loader animation
 const counter = document.querySelector('.counter');
 let count = 0;
@@ -26,6 +53,8 @@ requestAnimationFrame(updateLoader);
 // WebGL 3D Background
 const initWebGL = () => {
     const container = document.getElementById('canvas-container');
+    if (!container) return;
+
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -33,12 +62,12 @@ const initWebGL = () => {
     camera.position.y = 5;
     camera.rotation.x = -0.2;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Reduced for performance
     container.appendChild(renderer.domElement);
 
-    const geometry = new THREE.PlaneGeometry(60, 60, 64, 64);
+    const geometry = new THREE.PlaneGeometry(60, 60, 32, 32); // Reduced segments for performance
     geometry.rotateX(-Math.PI / 2);
 
     const positions = geometry.attributes.position;
@@ -101,11 +130,15 @@ const initWebGL = () => {
     scene.add(plane);
 
     let mouseX = 0;
+    let mouseY = 0;
     let targetX = 0;
+    let targetY = 0;
     const windowHalfX = window.innerWidth / 2;
+    const windowHalfY = window.innerHeight / 2;
 
     document.addEventListener('mousemove', (event) => {
         mouseX = (event.clientX - windowHalfX) * 0.001;
+        mouseY = (event.clientY - windowHalfY) * 0.001;
     });
 
     const clock = new THREE.Clock();
@@ -117,8 +150,10 @@ const initWebGL = () => {
         material.uniforms.uTime.value = elapsedTime;
 
         targetX = mouseX * 0.5;
+        targetY = mouseY * 0.5;
         plane.rotation.y += 0.0015;
-        camera.position.x += (mouseX * 5 - camera.position.x) * 0.05;
+        camera.position.x += (mouseX * 25 - camera.position.x) * 0.05;
+        camera.position.y += (-mouseY * 20 + 5 - camera.position.y) * 0.05;
         camera.lookAt(scene.position);
 
         renderer.render(scene, camera);
@@ -164,19 +199,98 @@ function initInteractions() {
     gsap.registerPlugin(ScrollTrigger);
 
     const reveals = document.querySelectorAll('.reveal');
-    reveals.forEach(reveal => {
-        gsap.to(reveal, {
-            scrollTrigger: {
-                trigger: reveal,
-                start: "top 85%",
-                toggleActions: "play none none reverse"
+    reveals.forEach((reveal, index) => {
+        gsap.fromTo(reveal,
+            {
+                opacity: 0,
+                y: 100
             },
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power3.out"
+            {
+                scrollTrigger: {
+                    trigger: reveal,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
+                delay: index * 0.1 // Stagger animations
+            }
+        );
+    });
+
+    // Animated loading for each section content
+    const sectionHeadings = document.querySelectorAll('.section-heading');
+    sectionHeadings.forEach(heading => {
+        gsap.fromTo(heading,
+            {
+                opacity: 0,
+                y: -50,
+                scaleX: 0.8
+            },
+            {
+                scrollTrigger: {
+                    trigger: heading,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                scaleX: 1,
+                duration: 0.8,
+                ease: "back.out(1.7)"
+            }
+        );
+    });
+
+    // Animate cards within sections
+    const cards = document.querySelectorAll('.panel, .service-item, .tech-card, .kol-card, .team-card');
+    cards.forEach((card, index) => {
+        gsap.fromTo(card,
+            {
+                opacity: 0,
+                y: 50,
+                scale: 0.9
+            },
+            {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.6,
+                ease: "power2.out",
+                delay: (index % 4) * 0.1 // Stagger within groups of 4
+            }
+        );
+    });
+
+    // Scroll Indicator
+    const sections = document.querySelectorAll('section[id]');
+    const scrollDots = document.querySelectorAll('.scroll-dot');
+
+    sections.forEach(section => {
+        ScrollTrigger.create({
+            trigger: section,
+            start: "top center",
+            end: "bottom center",
+            onEnter: () => updateActiveDot(section.id),
+            onEnterBack: () => updateActiveDot(section.id)
         });
     });
+
+    function updateActiveDot(sectionId) {
+        scrollDots.forEach(dot => {
+            dot.classList.remove('active');
+            if (dot.getAttribute('data-section') === sectionId) {
+                dot.classList.add('active');
+            }
+        });
+    }
 
     gsap.to('.monumental-vertical', {
         scrollTrigger: {

@@ -1,0 +1,132 @@
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, var(--primary), transparent),
+        radial-gradient(1px 1px at 50% 80%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 90% 5%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 30% 30%, var(--primary), transparent),
+        radial-gradient(1px 1px at 70% 60%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 5% 95%, var(--primary), transparent),
+        radial-gradient(1px 1px at 95% 85%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 45% 15%, var(--primary), transparent),
+        radial-gradient(1px 1px at 80% 40%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 20% 75%, var(--primary), transparent),
+        radial-gradient(1px 1px at 60% 5%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 15% 80%, var(--primary), transparent),
+        radial-gradient(1px 1px at 85% 20%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 35% 55%, var(--primary), transparent),
+        radial-gradient(1px 1px at 75% 90%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 5% 45%, var(--primary), transparent),
+        radial-gradient(1px 1px at 55% 70%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 25% 10%, var(--primary), transparent),
+        radial-gradient(1px 1px at 65% 50%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 90% 30%, var(--primary), transparent),
+        radial-gradient(1px 1px at 12% 58%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 88% 78%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 38% 8%, var(--primary), transparent),
+        radial-gradient(1px 1px at 78% 38%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 18% 88%, var(--primary), transparent),
+        radial-gradient(1px 1px at 58% 18%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 98% 48%, var(--primary), transparent),
+        radial-gradient(1px 1px at 28% 68%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 68% 98%, var(--primary), transparent),
+        radial-gradient(1px 1px at 48% 28%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 8% 72%, var(--primary), transparent),
+        radial-gradient(1px 1px at 82% 12%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 32% 42%, var(--primary), transparent),
+        radial-gradient(1px 1px at 72% 82%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 22% 2%, var(--primary), transparent),
+        radial-gradient(1px 1px at 62% 62%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 2% 92%, var(--primary), transparent),
+        radial-gradient(1px 1px at 92% 22%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 42% 52%, var(--primary), transparent),
+        radial-gradient(1px 1px at 4% 34%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 54% 84%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 24% 14%, var(--primary), transparent),
+        radial-gradient(1px 1px at 74% 44%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 14% 74%, var(--primary), transparent),
+        radial-gradient(1px 1px at 64% 24%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 94% 54%, var(--primary), transparent),
+        radial-gradient(1px 1px at 34% 94%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 44% 4%, var(--primary), transparent),
+        radial-gradient(1px 1px at 84% 64%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 16% 36%, var(--primary), transparent),
+        radial-gradient(1px 1px at 56% 76%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 26% 96%, var(--primary), transparent),
+        radial-gradient(1px 1px at 76% 16%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 96% 66%, var(--primary), transparent),
+        radial-gradient(1px 1px at 36% 46%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 66% 86%, var(--primary), transparent),
+        radial-gradient(1px 1px at 46% 6%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 6% 69%, var(--primary), transparent),
+        radial-gradient(1px 1px at 69% 39%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 39% 99%, var(--primary), transparent),
+        radial-gradient(1px 1px at 99% 9%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 9% 59%, var(--primary), transparent),
+        radial-gradient(1px 1px at 59% 29%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 29% 89%, var(--primary), transparent),
+        radial-gradient(1px 1px at 89% 19%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 19% 49%, var(--primary), transparent),
+        radial-gradient(1px 1px at 49% 79%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 79% 9%, var(--primary), transparent),
+        radial-gradient(1px 1px at 3% 23%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 53% 83%, var(--primary), transparent),
+        radial-gradient(1px 1px at 23% 3%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 83% 53%, var(--primary), transparent),
+        radial-gradient(1px 1px at 13% 43%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 43% 93%, var(--primary), transparent),
+        radial-gradient(1px 1px at 93% 13%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 33% 63%, var(--primary), transparent),
+        radial-gradient(1px 1px at 63% 33%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 7% 87%, var(--primary), transparent),
+        radial-gradient(1px 1px at 87% 7%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 27% 57%, var(--primary), transparent),
+        radial-gradient(1px 1px at 57% 27%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 17% 77%, var(--primary), transparent),
+        radial-gradient(1px 1px at 77% 17%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 37% 97%, var(--primary), transparent),
+        radial-gradient(1px 1px at 97% 37%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 47% 67%, var(--primary), transparent),
+        radial-gradient(1px 1px at 67% 47%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 1% 51%, var(--primary), transparent),
+        radial-gradient(1px 1px at 51% 1%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 31% 81%, var(--primary), transparent),
+        radial-gradient(1px 1px at 81% 31%, var(--primary), transparent),
+        radial-gradient(0.5px 0.5px at 21% 71%, var(--primary), transparent),
+        radial-gradient(1px 1px at 71% 21%, var(--primary), transparent),
+        radial-gradient(1.5px 1.5px at 11% 91%, var(--primary), transparent),
+        radial-gradient(1px 1px at 91% 11%, var(--primary), transparent);
+
+    background-size: 800px 800px;
+    background-repeat: repeat;
+    animation: rotateConstellation 120s linear infinite, floatDots 8s ease-in-out infinite;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+@keyframes rotateConstellation {
+    0% {
+        transform: rotateZ(0deg) rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg) rotateX(5deg);
+    }
+}
+
+@keyframes floatDots {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
