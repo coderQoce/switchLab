@@ -4,15 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | The Switch Labs</title>
+    <title>About Us | SWITCH LABS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="background.css">
 </head>
 
 <body>
-    <div class="background-glow glow1"></div>
-    <div class="background-glow glow2"></div>
-    <div class="background-glow glow3"></div>
+
+    <div id="canvas-container"></div>
+    <div class="system-grid"></div>
+    <div class="monumental-vertical">ABOUT SWITCHLABS</div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <a href="#about-switch" class="scroll-dot active" data-section="about-switch" title="About"></a>
+        <a href="#aims" class="scroll-dot" data-section="aims" title="Framework"></a>
+        <a href="#principles" class="scroll-dot" data-section="principles" title="Principles"></a>
+        <a href="#tge-pattern" class="scroll-dot" data-section="tge-pattern" title="TGE"></a>
+        <a href="#why-us" class="scroll-dot" data-section="why-us" title="Why Us"></a>
+        <a href="#team" class="scroll-dot" data-section="team" title="Team"></a>
+        <a href="#faq" class="scroll-dot" data-section="faq" title="FAQ"></a>
+    </div>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top new-navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
@@ -24,86 +48,595 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about-us.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="core-problem.html">Core Problems</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tge-plan.html">TGE Pattern</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#roadmap">TGE</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#technology">Tech</a></li>
-                    <li class="nav-item"><a class="nav-link" href="roadmap.html">Road Map</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#why-us">Why Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kols.html">KOLs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="team.html">Meet the Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main class="container mt-5 pt-5">
-        <div class="section-header text-center">
-            <span class="meta-label">Our Philosophy</span>
-            <h1 class="display-4">About The Switch Labs</h1>
-            <p class="lead mx-auto" style="max-width: 800px;">We are founded on the principle that sustainable growth in
-                Web3 comes from genuine community engagement, not just speculative hype. Our mission is to provide the
-                intelligence and tools necessary for projects to build lasting, valuable ecosystems.</p>
-        </div>
+    <main>
 
-        <section class="reveal">
-            <div class="row align-items-center gy-5">
-                <div class="col-lg-6">
-                    <h2>Mission & Vision</h2>
-                    <p class="panel-desc">Our mission is to empower Web3 projects with the intelligence and tools to
-                        build sustainable, engaged communities. We envision a future where decentralized ecosystems
-                        thrive on genuine value and long-term participation.</p>
+        <!-- About Switch Labs Section -->
+        <section class="about-section" id="about-switch">
+            <div class="container">
+                <div class="section-heading-container">
+                    <h2 class="section-heading">ABOUT US</h2>
                 </div>
-                <div class="col-lg-6">
-                    <div class="panel">
-                        <h4 class="panel-title">The Switch AI</h4>
-                        <p class="panel-desc">At the heart of our operation is a proprietary AI engine that analyzes
-                            on-chain and off-chain data to deliver predictive insights on community behavior, retention
-                            risks, and growth opportunities.</p>
+                <div class="row gy-5">
+                    <div class="col-lg-12">
+                        <div class="about-content">
+                            <h3 class="about-title">TheSwitchLabs</h3>
+                            <p class="about-text">TheSwitchLabs is a Web3 agency helping crypto, blockchain, and DeFi
+                                projects achieve sustainable growth through strategic marketing, community building, and
+                                brand development.</p>
+                            <p class="about-text">In a fast-moving industry where hype fades quickly, we believe the
+                                real challenge is not visibility
+                                it is retention. Founded by experienced builders
+                                within the Web3 ecosystem, TheSwitchLabs was created to help projects build lasting
+                                communities, stronger engagement, and long-term value.</p>
+                            <p class="about-text">More than an agency, TheSwitchLabs is a lab for innovation, combining
+                                AI-driven strategy, creative marketing, and community expertise to move Web3 growth from
+                                short-term hype to sustainable success.</p>
+                            <p class="about-text">As we approach our 2026 launch, we invite builders, creators, and
+                                innovators to ensure presence and grow with us.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="reveal">
-            <div class="section-header text-center">
-                <h2>Key Principles</h2>
+        <!-- Framework & Solution Section -->
+        <section class="aims-section" id="aims">
+            <div class="container">
+                <div class="section-heading-container">
+                    <h2 class="section-heading">FRAMEWORK & SOLUTION</h2>
+                </div>
+
+                <div class="framework-intro">
+                    <h3 class="framework-title">Our Framework</h3>
+                    <p class="framework-intro-text">At TheSwitchLabs, we approach growth differently. Instead of asking,
+                        "How do we get more users?" we ask, "Why would people stay?"</p>
+                    <p class="framework-intro-text">We believe sustainable growth is not only about attracting attention
+                        it is about creating reasons for people to remain involved, contribute consistently, and grow
+                        with the community over time.</p>
+                    <p class="framework-intro-text">Our framework is built on four core principles:</p>
+                </div>
+
+                <div class="framework-principles">
+                    <div class="framework-card">
+                        <div class="framework-number">01</div>
+                        <h4 class="framework-heading">Strategic Acquisition</h4>
+                        <p class="framework-text">We focus on attracting participants who already demonstrate the right
+                            signals for long-term engagement. Rather than chasing volume, we prioritize founders,
+                            creators, and community members whose behavior reflects consistency, alignment, and genuine
+                            interest.</p>
+                    </div>
+                    <div class="framework-card">
+                        <div class="framework-number">02</div>
+                        <h4 class="framework-heading">Sustainable Incentive Design</h4>
+                        <p class="framework-text">Short-term rewards often create short-term behavior. We design systems
+                            and campaigns that reward meaningful participation, consistency, and ongoing contribution to
+                            encourage deeper community involvement over time.</p>
+                    </div>
+                    <div class="framework-card">
+                        <div class="framework-number">03</div>
+                        <h4 class="framework-heading">Real-Time Engagement Optimization</h4>
+                        <p class="framework-text">Using real engagement data, we monitor how communities interact, where
+                            interest declines, and where participation strengthens. This allows us to continuously
+                            refine strategies, improve retention, and adapt campaigns in real time.</p>
+                    </div>
+                    <div class="framework-card">
+                        <div class="framework-number">04</div>
+                        <h4 class="framework-heading">Community Ownership & Long-Term Participation</h4>
+                        <p class="framework-text">Strong communities are built when people feel a sense of ownership. We
+                            help projects create systems that encourage responsibility, contribution, and shared growth
+                            turning community members into long-term stakeholders instead of temporary participants.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="solution-section">
+                    <h3 class="framework-title">Our Solution</h3>
+                    <p class="solution-text">TheSwitchLabs combines strategic marketing, AI-driven insights, and
+                        community expertise to help Web3 projects move beyond hype-driven growth. Our goal is to build
+                        ecosystems designed for retention, sustainable engagement, and long-term value creation.</p>
+                </div>
             </div>
-            <div class="row gy-4">
-                <div class="col-md-4">
-                    <div class="panel text-center">
-                        <h4 class="panel-title">Data-Driven Strategy</h4>
-                        <p class="panel-desc">We replace guesswork with intelligence, providing actionable insights from
-                            complex data sets.</p>
+        </section>
+
+        <!-- Key Principles Section -->
+        <section class="principles-section" id="principles">
+            <div class="container">
+                <div class="section-heading-container">
+                    <h2 class="section-heading">KEY PRINCIPLES</h2>
+                </div>
+
+                <div class="principles-content">
+                    <div class="principle-item">
+                        <h4 class="principle-heading">Sustainability Over Speculation</h4>
+                        <p class="principle-desc">We prioritize tools and systems that create real, lasting utility
+                            rather than short-lived hype.</p>
+                    </div>
+                    <div class="principle-item">
+                        <h4 class="principle-heading">Inclusivity</h4>
+                        <p class="principle-desc">We design for everyone, including users and builders in emerging
+                            markets, ensuring equal access and opportunity.</p>
+                    </div>
+                    <div class="principle-item">
+                        <h4 class="principle-heading">Innovation</h4>
+                        <p class="principle-desc">We leverage AI and blockchain to automate processes and strengthen
+                            long-term user retention.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="panel text-center">
-                        <h4 class="panel-title">Sustainable Growth</h4>
-                        <p class="panel-desc">Our focus is on building long-term value and fostering communities that
-                            last.</p>
+
+                <div class="principles-summary">
+                    <p class="principles-summary-text">TheSwitchLabs is a Web3 agency focused on reshaping the crypto
+                        and blockchain space by shifting attention from short-term speculation to long-term value
+                        creation. Built by experienced founders, builders, and community leaders, we are committed to
+                        sustainable growth and meaningful engagement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TGE Pattern Section -->
+        <section class="tge-section" id="tge-pattern">
+            <div class="container">
+                <div class="section-heading-container">
+                    <h2 class="section-heading">THE TGE PATTERN</h2>
+                </div>
+
+                <div class="tge-intro">
+                    <p class="tge-intro-text">The Token Generation Event (TGE) is often the point of highest visibility
+                        for most Web3 projects.</p>
+                </div>
+
+                <div class="tge-phases">
+                    <div class="tge-phase">
+                        <h4 class="tge-phase-title">Before TGE</h4>
+                        <p class="tge-phase-subtitle">In the period leading up to TGE, projects typically experience:
+                        </p>
+                        <ul class="tge-list">
+                            <li class="tge-list-item">Increased social engagement</li>
+                            <li class="tge-list-item">Surge in trading activity</li>
+                            <li class="tge-list-item">Rapid community growth</li>
+                            <li class="tge-list-item">High speculative attention</li>
+                        </ul>
+                    </div>
+                    <div class="tge-phase">
+                        <h4 class="tge-phase-title">After TGE</h4>
+                        <p class="tge-phase-subtitle">Shortly after the event, a common shift occurs:</p>
+                        <ul class="tge-list">
+                            <li class="tge-list-item">Drop in daily active users</li>
+                            <li class="tge-list-item">Reduced trading consistency</li>
+                            <li class="tge-list-item">Token concentration among short-term holders</li>
+                            <li class="tge-list-item">Decline in community interaction</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="panel text-center">
-                        <h4 class="panel-title">Community-Centric</h4>
-                        <p class="panel-desc">We believe that a strong community is the foundation of any successful
-                            Web3 project.</p>
+
+                <div class="tge-observation">
+                    <p class="tge-observation-text">This is not a criticism, but a recurring pattern in the space.</p>
+                </div>
+
+                <div class="tge-insight">
+                    <p class="tge-insight-text">When early incentives fade and speculation slows, many projects struggle
+                        to maintain participation. Momentum-driven growth often fails to convert into sustained
+                        engagement, leading to gradual decline instead of long-term development.</p>
+                    <p class="tge-insight-text">Understanding this lifecycle is the first step toward building
+                        differently.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section class="why-us-section" id="why-us">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="why-us-left">
+                            <h2 class="why-us-title">Our Point of View on <span class="highlight">RETENTION</span></h2>
+                            <div class="why-us-tags">
+                                <div class="tag">DeFi</div>
+                                <div class="tag">Crypto Markets</div>
+                                <div class="tag">Community Systems</div>
+                                <div class="tag">AI Strategy</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="why-us-right">
+                            <h2 class="why-us-subtitle">Why Choose TheSwitchLabs</h2>
+                            <p>TheSwitchLabs exists to address a core weakness in Web3 growth: the gap between launch
+                                hype and long-term sustainability. Most projects experience strong attention around
+                                their Token Generation Event (TGE), driven by speculation, incentives, and short-term
+                                excitement. However, this momentum often fades quickly, leaving behind inactive users
+                                and declining engagement. We focus on solving this exact problem by shifting attention
+                                from temporary visibility to lasting retention and utility-driven growth.</p>
+                            <p>We bring together experienced professionals with deep expertise in DeFi, crypto markets,
+                                and community systems. Our approach combines data-driven strategy with creative
+                                execution to understand user behavior and design better engagement models. Instead of
+                                relying on hype cycles, we build structures that encourage consistent participation,
+                                stronger community interaction, and meaningful user contribution. Every strategy we
+                                create is focused on measurable outcomes higher retention, deeper loyalty, and more
+                                stable ecosystems.</p>
+                            <p>At TheSwitchLabs, we believe real success in Web3 is not defined by how loud a project
+                                launches, but by how long it lasts after the noise fades. That is why we design systems
+                                that strengthen communities beyond TGE, turning short-term interest into long-term
+                                commitment. By combining insight, innovation, and execution, we help projects move from
+                                speculative growth to sustainable ecosystems built to endure.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Team Section (Pictures Only) -->
+        <section class="team-section-container" id="team">
+            <div class="container">
+                <div class="section-heading-container text-center">
+                    <h2 class="section-heading">The Team Behind TheSwitchLabs</h2>
+                    <p class="section-subheading">A fast-growing collective of Web3 strategists, growth operators, and
+                        ecosystem builders shaping sustainable crypto growth.</p>
+                </div>
+                <div class="team-gallery">
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/Nipherme-Founder-CEO.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">Nipherme</h4>
+                        <p class="team-role">Founder & CEO</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/NoLimit-Chief-of-operation.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">NoLimit</h4>
+                        <p class="team-role">Chief of Operations</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/Jayne-Co-Founder.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">Jayne</h4>
+                        <p class="team-role">Co-Founder</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/Dara-Growth-Manager.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">Dara</h4>
+                        <p class="team-role">Growth Manager</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/Doingz-Partnership-and-Marketing.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">Doingz</h4>
+                        <p class="team-role">Partnership & Marketing</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/GG-Intern.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">GG</h4>
+                        <p class="team-role">Intern</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/Hassan-Content-and-design-Operation.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">Hassan</h4>
+                        <p class="team-role">Content & Design Operation</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/Kahuna-Intern.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">Kahuna</h4>
+                        <p class="team-role">Intern</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/Mide-Head-Of_design.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">Mide</h4>
+                        <p class="team-role">Head of Design</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/Perpetual-collaboration-Manager.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">Perpetual</h4>
+                        <p class="team-role">Collaboration Manager</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/Zek-Partnership-and-Marketing.jpg" alt="Team Member" />
+                        </div>
+                        <h4 class="team-name">Zek</h4>
+                        <p class="team-role">Partnership & Marketing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fit/Not Fit Section -->
+        <section class="fit-section" id="fit-not-fit">
+            <div class="container">
+                <div class="fit-heading text-center">
+                    <h2 class="fit-title">Who We’re a Fit For and <span class="fit-not">Who We’re Not</span></h2>
+                    <p class="fit-desc">Not every Web3 project requires the same type of growth support. TheSwitchLabs
+                        is built for teams that want structured execution, where growth is treated as a system not a
+                        collection of disconnected campaigns or short-term pushes.</p>
+                </div>
+                <div class="row fit-columns">
+                    <div class="col-lg-6">
+                        <div class="fit-col fit-yes">
+                            <div class="fit-col-header">
+                                <span class="fit-icon fit-icon-yes">✔</span>
+                                <span class="fit-col-title">We work best with teams that:</span>
+                            </div>
+                            <div class="fit-card fit-card-yes">
+                                <h4>Care about long-term adoption, not short-term spikes</h4>
+                                <p>The focus is on sustained engagement, real utility, and community participation that
+                                    continues beyond launch events like TGE.</p>
+                            </div>
+                            <div class="fit-card fit-card-yes">
+                                <h4>Have a real product with real constraints</h4>
+                                <p>Teams are either live or close to launch, with clear technical direction and an
+                                    understanding of what can realistically drive growth.</p>
+                            </div>
+                            <div class="fit-card fit-card-yes">
+                                <h4>Are ready to treat growth as a system</h4>
+                                <p>Strategy, distribution, and execution are aligned, with decisions guided by data,
+                                    testing, and continuous iteration over time.</p>
+                            </div>
+                            <div class="fit-card fit-card-yes">
+                                <h4>Value accountability and collaboration</h4>
+                                <p>Successful outcomes require shared ownership, clear communication, and a willingness
+                                    to adapt based on performance and feedback.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="fit-col fit-no">
+                            <div class="fit-col-header">
+                                <span class="fit-icon fit-icon-no">✖</span>
+                                <span class="fit-col-title">We’re not a fit for teams that:</span>
+                            </div>
+                            <div class="fit-card fit-card-no">
+                                <h4>Are looking for short-term hype cycles</h4>
+                                <p>One-off campaigns, empty virality, and attention without retention are outside our
+                                    approach.</p>
+                            </div>
+                            <div class="fit-card fit-card-no">
+                                <h4>Want pay-to-shill or guaranteed outcomes</h4>
+                                <p>We don’t operate on token-price promises, artificial engagement, or influencer-only
+                                    strategies without real substance.</p>
+                            </div>
+                            <div class="fit-card fit-card-no">
+                                <h4>Avoid accountability or system thinking</h4>
+                                <p>Projects unwilling to align product, community, and distribution or to measure
+                                    results over time are not aligned with our model.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-heading-container">
+                    <h2 class="section-heading">FREQUENTLY ASKED QUESTIONS</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq1">
+                                        What services does Switch Labs offer?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We offer comprehensive Web3 growth services including strategic marketing,
+                                        community building, brand development, AI-powered analytics, and retention
+                                        systems.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq2">
+                                        How does your AI technology work?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Our AI engine analyzes on-chain and off-chain data to provide predictive
+                                        insights on community behavior, retention risks, and growth opportunities,
+                                        enabling data-driven decision making.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq3">
+                                        What makes Switch Labs different from other agencies?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Our unique combination of AI-powered insights, community-first approach, and
+                                        proven track record sets us apart. We focus on sustainable, long-term growth
+                                        rather than short-term hype.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq4">
+                                        How do I get started with Switch Labs?
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Simply reach out to us through our contact form or schedule a consultation call.
+                                        We'll discuss your project's needs and create a tailored strategy for your
+                                        success.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="pt-5 pb-5 mt-5">
-        <div class="container text-center">
-            <p class="meta-label">&copy; 2026 <span class="text-primary">The Switch Labs</span>. All Rights Reserved.
-            </p>
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-header">
+            <div class="footer-bg-large">SWITCH</div>
+        </div>
+        <div class="container">
+            <div class="row gy-6">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <img src="assets/logo.jpg" alt="Logo" class="footer-logo" />
+                            <span class="h4 mb-0 fw-bold">SWITCH LABS</span>
+                        </div>
+                        <p class="footer-desc">Web3 agency specializing in helping cryptocurrency and DeFi projects
+                            achieve sustainable growth through Strategic Marketing, Community Building, and Brand
+                            Development.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-heading">COMPANY</h5>
+                    <ul class="footer-links">
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#team">Team</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-heading">GET IN TOUCH</h5>
+                    <div class="footer-social-links">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2026 SWITCH LABS. All rights reserved.</p>
+                <div class="footer-social-handle">X @theswitchlabs</div>
+            </div>
         </div>
     </footer>
 
+    <!-- JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Scroll Indicator Script -->
+    <script>
+        const sections = [
+            { id: 'about-switch', dot: 0 },
+            { id: 'aims', dot: 1 },
+            { id: 'principles', dot: 2 },
+            { id: 'tge-pattern', dot: 3 },
+            { id: 'why-us', dot: 4 },
+            { id: 'team', dot: 5 },
+            { id: 'faq', dot: 6 }
+        ];
+
+        const dots = document.querySelectorAll('.scroll-dot');
+
+        function updateScrollIndicator() {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+            sections.forEach(section => {
+                const element = document.getElementById(section.id);
+                if (element) {
+                    const { top, bottom } = element.getBoundingClientRect();
+                    const absoluteTop = top + window.scrollY;
+                    const absoluteBottom = bottom + window.scrollY;
+
+                    if (scrollPosition >= absoluteTop && scrollPosition <= absoluteBottom) {
+                        dots.forEach(dot => dot.classList.remove('active'));
+                        dots[section.dot].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateScrollIndicator);
+        updateScrollIndicator();
+
+        // Smooth scroll for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                const element = document.getElementById(sections[index].id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
