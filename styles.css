@@ -3,16 +3,16 @@
     /* Pink/Magenta */
     --accent: #FF0088;
     /* Bright Pink */
-    --glow: rgba(224, 17, 95, 0.5);
+    --glow: rgba(224, 17, 95, 0.3);
     /* Magenta Glow */
-    --bg: #0A0A0A;
-    --surface: #0F001A;
-    --text-main: #FFFFFF;
-    --text-muted: #EEEEEE;
-    --grid-line: rgba(255, 255, 255, 0.05);
-    --grid-line-strong: rgba(255, 255, 255, 0.1);
-    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+    --bg: linear-gradient(135deg, #FFFFFF 0%, #FFF5F8 50%, #FFFFFF 100%);
+    --surface: #FFF0F5;
+    --text-main: #0A0A0A;
+    --text-muted: #666666;
+    --grid-line: rgba(0, 0, 0, 0.05);
+    --grid-line-strong: rgba(0, 0, 0, 0.1);
+    --font-main: 'DM Sans', sans-serif;
+    --font-display: 'DM Sans', sans-serif;
     --container-padding: 4vw;
 }
 
@@ -336,7 +336,7 @@ section {
 .hero-main-title {
     font-family: var(--font-display);
     font-size: 5rem;
-    font-weight: 700;
+    font-weight: 900;
     color: var(--text-main);
     margin: 1rem 0 0.5rem;
     line-height: 1;
@@ -356,6 +356,7 @@ section {
     .hero-main-title {
         font-size: 2rem;
         letter-spacing: 0.02em;
+        font-weight: 900;
     }
 
     .hero-description {
@@ -401,6 +402,7 @@ section {
 @media (max-width: 480px) {
     .hero-main-title {
         font-size: 1.6rem;
+        font-weight: 900;
     }
 
     .hero-description {
@@ -639,7 +641,7 @@ section {
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     background: transparent;
     border: 1px solid var(--primary);
     border-radius: 50px;
@@ -2171,12 +2173,27 @@ textarea.form-control {
     font-size: 25vw;
     font-weight: 800;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.08);
+    color: var(--primary);
+    opacity: 0.12;
     white-space: nowrap;
     letter-spacing: -0.05em;
     pointer-events: none;
     z-index: 0;
     line-height: 1;
+    text-shadow: 0 0 80px var(--glow), 0 0 160px rgba(224, 17, 95, 0.3);
+    animation: footerFloat 6s ease-in-out infinite;
+}
+
+@keyframes footerFloat {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-20px);
+    }
 }
 
 .footer-bg-text {
@@ -2187,12 +2204,13 @@ textarea.form-control {
     font-family: var(--font-display);
     font-size: 30vw;
     font-weight: 800;
-    color: #1a1a1a;
-    opacity: 0.4;
+    color: var(--primary);
+    opacity: 0.15;
     pointer-events: none;
     z-index: 0;
     white-space: nowrap;
     letter-spacing: -0.05em;
+    text-shadow: 0 0 60px var(--glow), 0 0 120px rgba(224, 17, 95, 0.2);
 }
 
 .footer-main-text {

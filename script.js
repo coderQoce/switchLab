@@ -303,13 +303,6 @@ function initInteractions() {
         opacity: 0
     });
 
-    gsap.to('#marquee', {
-        xPercent: -50,
-        ease: "none",
-        duration: 20,
-        repeat: -1
-    });
-
     initWebGL();
 
     const serviceItems = document.querySelectorAll('.service-item');
