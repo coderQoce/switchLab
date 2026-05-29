@@ -54,7 +54,7 @@ body {
 .scroll-dot {
     width: 4px;
     height: 3px;
-    background: rgba(224, 17, 95, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 2px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -180,9 +180,9 @@ body {
     font-size: 15vw;
     font-weight: 400;
     line-height: 0.8;
-    color: var(--primary);
+    color: var(--text-main);
     letter-spacing: -0.05em;
-    text-shadow: 0 0 20px var(--glow), 0 0 40px rgba(224, 17, 95, 0.6);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.15), 0 0 40px rgba(0, 0, 0, 0.3);
 }
 
 .system-grid {
@@ -334,7 +334,7 @@ section {
 }
 
 .dropdown-item:hover {
-    background-color: var(--primary);
+    background-color: var(--text-main);
     color: var(--bg);
 }
 
@@ -401,7 +401,7 @@ section {
     }
 
     .hero {
-        padding-top: 5rem !important;
+        padding-top: 8rem !important;
         min-height: auto;
         padding-bottom: 3rem;
     }
@@ -464,7 +464,8 @@ section {
     font-size: 4.5rem;
     line-height: 1;
     margin-top: 0.5rem;
-    color: var(--text-main);
+    color: var(--primary);
+    text-shadow: 0 0 30px rgba(224, 17, 95, 0.5), 0 0 60px rgba(224, 17, 95, 0.3), 0 0 90px rgba(224, 17, 95, 0.2);
 }
 
 .big-question-mark {
@@ -474,42 +475,43 @@ section {
     right: 0;
     bottom: -5rem;
     color: var(--primary);
-    opacity: 0.35;
+    opacity: 0.5;
     z-index: -1;
     animation: question-mark-animation 10s infinite alternate;
     transition: all 0.4s ease;
     cursor: pointer;
+    text-shadow: 0 0 40px rgba(224, 17, 95, 0.6), 0 0 80px rgba(224, 17, 95, 0.4), 0 0 120px rgba(224, 17, 95, 0.2);
 }
 
 .big-question-mark:hover {
     opacity: 0.5;
-    text-shadow: 0 0 30px var(--glow), 0 0 60px var(--primary), 0 0 90px rgba(224, 17, 95, 0.5);
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.15), 0 0 60px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes question-mark-animation {
     0% {
         transform: rotate(-5deg) scale(1) translateY(0);
-        text-shadow: 0 0 80px var(--primary), 0 0 120px var(--glow);
+        text-shadow: 0 0 80px rgba(0, 0, 0, 0.3), 0 0 120px rgba(0, 0, 0, 0.15);
     }
 
     25% {
         transform: rotate(3deg) scale(1.05) translateY(-20px);
-        text-shadow: 0 0 100px var(--primary), 0 0 150px var(--glow);
+        text-shadow: 0 0 100px rgba(0, 0, 0, 0.3), 0 0 150px rgba(0, 0, 0, 0.15);
     }
 
     50% {
         transform: rotate(-3deg) scale(0.98) translateY(10px);
-        text-shadow: 0 0 70px var(--primary), 0 0 100px var(--glow);
+        text-shadow: 0 0 70px rgba(0, 0, 0, 0.3), 0 0 100px rgba(0, 0, 0, 0.15);
     }
 
     75% {
         transform: rotate(5deg) scale(1.03) translateY(-10px);
-        text-shadow: 0 0 120px var(--primary), 0 0 180px var(--glow);
+        text-shadow: 0 0 120px rgba(0, 0, 0, 0.3), 0 0 180px rgba(0, 0, 0, 0.15);
     }
 
     100% {
         transform: rotate(5deg) scale(1.1) translateY(0);
-        text-shadow: 0 0 150px var(--primary), 0 0 200px var(--glow);
+        text-shadow: 0 0 150px rgba(0, 0, 0, 0.3), 0 0 200px rgba(0, 0, 0, 0.15);
     }
 }
 
@@ -567,12 +569,11 @@ section {
 }
 
 .problem-card:hover {
-    border-bottom-color: var(--primary);
+    border-bottom-color: var(--text-main);
 }
 
 .problem-card:hover .icon-number {
-    color: var(--primary);
-    text-shadow: 0 0 10px var(--glow);
+    color: var(--text-main);
 }
 
 .problem-card-icon {
@@ -639,13 +640,13 @@ section {
     font-weight: 700;
     text-transform: uppercase;
     color: var(--primary);
-    opacity: 0.2;
+    opacity: 0.4;
     line-height: 1;
     letter-spacing: 0.1em;
     pointer-events: none;
     z-index: 2;
     animation: verticalFloat 8s ease-in-out infinite;
-    text-shadow: 0 0 30px rgba(224, 17, 95, 0.3);
+    text-shadow: 0 0 30px rgba(224, 17, 95, 0.5), 0 0 60px rgba(224, 17, 95, 0.3), 0 0 90px rgba(224, 17, 95, 0.2);
 }
 
 @keyframes verticalFloat {
@@ -812,7 +813,6 @@ section {
 
 .faq-header-cta a:hover {
     text-decoration: underline;
-    text-shadow: 0 0 10px var(--glow);
 }
 
 /* Contact Section */
@@ -860,7 +860,7 @@ section {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    background: linear-gradient(90deg, transparent, var(--text-main), transparent);
     transition: width 0.6s ease;
     z-index: 1;
 }
@@ -961,8 +961,8 @@ section {
 
 .form-control:focus {
     background: transparent;
-    border-bottom-color: var(--primary);
-    box-shadow: 0 1px 0 var(--primary);
+    border-bottom-color: var(--text-main);
+    box-shadow: 0 1px 0 var(--text-main);
     color: var(--text-main);
     outline: none;
 }
@@ -1039,13 +1039,13 @@ textarea.form-control {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1.5rem;
-    border: 3px solid var(--primary);
+    border: 3px solid var(--text-main);
     transition: all 0.4s ease;
 }
 
 .kol-card:hover .kol-avatar {
-    border-color: var(--accent);
-    box-shadow: 0 0 20px var(--glow);
+    border-color: var(--text-main);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .kol-name {
@@ -1080,11 +1080,12 @@ textarea.form-control {
     font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(224, 17, 95, 0.4);
 }
 
 .kol-twitter:hover {
-    color: var(--accent);
-    text-shadow: 0 0 10px var(--glow);
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(224, 17, 95, 0.6), 0 0 40px rgba(224, 17, 95, 0.3);
 }
 
 .kol-twitter svg {
@@ -1136,7 +1137,7 @@ textarea.form-control {
 
 .team-card:hover {
     transform: translateX(10px);
-    border-bottom-color: var(--primary);
+    border-bottom-color: var(--text-main);
 }
 
 .team-image {
@@ -1179,7 +1180,7 @@ textarea.form-control {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--primary);
+    background-color: var(--text-main);
     transform: scaleX(0);
     transform-origin: left;
     animation: underline-animation 10s linear infinite alternate;
@@ -1217,11 +1218,11 @@ textarea.form-control {
     font-family: var(--font-display);
     font-size: clamp(3rem, 5vw, 5rem);
     font-weight: 400;
-    color: var(--primary);
+    color: var(--text-main);
     line-height: 1;
     margin-bottom: 1rem;
     letter-spacing: -0.03em;
-    text-shadow: 0 0 20px var(--glow), 0 0 40px rgba(224, 17, 95, 0.5);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.15), 0 0 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Section Glow Circles */
@@ -1388,12 +1389,12 @@ textarea.form-control {
 }
 
 .tech-card:hover .tech-card-icon {
-    border-color: var(--primary);
-    box-shadow: 0 0 20px var(--glow);
+    border-color: var(--text-main);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .tech-card:hover .tech-card-icon svg {
-    color: var(--accent);
+    color: var(--text-main);
     transform: scale(1.1);
 }
 
@@ -1409,7 +1410,7 @@ textarea.form-control {
 }
 
 .tech-card:hover .tech-card-title {
-    color: var(--primary);
+    color: var(--text-main);
 }
 
 .tech-card-desc {
@@ -1581,7 +1582,7 @@ textarea.form-control {
     left: -100%;
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    background: linear-gradient(90deg, transparent, var(--text-main), transparent);
     animation: run-line 6s linear infinite;
 }
 
@@ -1648,7 +1649,7 @@ textarea.form-control {
     left: 0;
     width: 100%;
     height: 2px;
-    background: var(--primary);
+    background: var(--text-main);
     transform: scaleX(0) translateY(-50%);
     transform-origin: left;
     z-index: 0;
@@ -1662,7 +1663,7 @@ textarea.form-control {
     width: 37.5%;
     /* Position up to the middle of the second item (LAUNCH) */
     height: 2px;
-    background: var(--primary);
+    background: var(--text-main);
     transform: translateY(-50%);
     z-index: 0;
 }
@@ -1694,14 +1695,14 @@ textarea.form-control {
     height: 16px;
     border-radius: 50%;
     background-color: var(--bg);
-    border: 2px solid var(--primary);
+    border: 2px solid var(--text-main);
     transition: all 0.3s ease;
     z-index: 1;
 }
 
 .roadmap-item:hover::before,
 .roadmap-item.current::before {
-    background-color: var(--primary);
+    background-color: var(--text-main);
     box-shadow: 0 0 25px var(--glow);
 }
 
@@ -1739,9 +1740,8 @@ textarea.form-control {
     display: block;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--primary);
+    color: var(--text-main);
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 10px var(--glow), 0 0 20px rgba(224, 17, 95, 0.5);
 }
 
 .roadmap-content h4 {
@@ -1782,8 +1782,8 @@ textarea.form-control {
     right: 0;
     bottom: 0;
     background-image:
-        linear-gradient(to right, rgba(224, 17, 95, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(224, 17, 95, 0.05) 1px, transparent 1px);
+        linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
 }
@@ -1865,7 +1865,7 @@ textarea.form-control {
 }
 
 .node-label.active {
-    color: var(--primary);
+    color: var(--text-main);
     font-weight: 600;
     animation: blink 2s infinite;
 }
@@ -1894,7 +1894,7 @@ textarea.form-control {
 
 .node-card:hover,
 .node-card.active {
-    border-bottom-color: var(--primary);
+    border-bottom-color: var(--text-main);
 }
 
 .node-card.active {
@@ -1945,7 +1945,7 @@ textarea.form-control {
     content: '—';
     position: absolute;
     left: 0;
-    color: var(--primary);
+    color: var(--text-main);
     opacity: 0.5;
 }
 
@@ -1963,11 +1963,11 @@ textarea.form-control {
 }
 
 .legend-dot.passed {
-    background: var(--primary);
+    background: var(--text-main);
 }
 
 .legend-dot.current {
-    background: var(--primary);
+    background: var(--text-main);
     box-shadow: 0 0 10px var(--glow);
     animation: pulse-dot 2s infinite;
 }
@@ -2082,7 +2082,7 @@ textarea.form-control {
 }
 
 .text-accent {
-    color: var(--primary);
+    color: var(--text-main);
 }
 
 #services .section-heading-container {
@@ -2119,7 +2119,7 @@ textarea.form-control {
 
 .text-pink {
     color: var(--primary) !important;
-    text-shadow: 0 0 10px var(--glow), 0 0 20px rgba(224, 17, 95, 0.5), 0 0 30px rgba(224, 17, 95, 0.3);
+    text-shadow: 0 0 20px rgba(224, 17, 95, 0.5), 0 0 40px rgba(224, 17, 95, 0.3), 0 0 60px rgba(224, 17, 95, 0.2);
 }
 
 
@@ -2148,101 +2148,101 @@ textarea.form-control {
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(0.5px 0.5px at 10% 20%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 50% 80%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 90% 5%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 30% 30%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 70% 60%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 5% 95%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 95% 85%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 45% 15%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 80% 40%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 20% 75%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 60% 5%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 15% 80%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 85% 20%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 35% 55%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 75% 90%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 5% 45%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 55% 70%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 25% 10%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 65% 50%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 90% 30%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 12% 58%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 88% 78%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 38% 8%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 78% 38%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 18% 88%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 58% 18%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 98% 48%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 28% 68%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 68% 98%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 48% 28%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 8% 72%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 82% 12%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 32% 42%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 72% 82%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 22% 2%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 62% 62%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 2% 92%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 92% 22%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 42% 52%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 4% 34%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 54% 84%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 24% 14%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 74% 44%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 14% 74%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 64% 24%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 94% 54%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 34% 94%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 44% 4%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 84% 64%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 16% 36%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 56% 76%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 26% 96%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 76% 16%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 96% 66%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 36% 46%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 66% 86%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 46% 6%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 6% 69%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 69% 39%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 39% 99%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 99% 9%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 9% 59%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 59% 29%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 29% 89%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 89% 19%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 19% 49%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 49% 79%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 79% 9%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 3% 23%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 53% 83%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 23% 3%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 83% 53%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 13% 43%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 43% 93%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 93% 13%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 33% 63%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 63% 33%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 7% 87%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 87% 7%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 27% 57%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 57% 27%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 17% 77%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 77% 17%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 37% 97%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 97% 37%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 47% 67%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 67% 47%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 1% 51%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 51% 1%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 31% 81%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 81% 31%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 21% 71%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 71% 21%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 11% 91%, var(--primary), transparent),
-        radial-gradient(0.5px 0.5px at 91% 11%, var(--primary), transparent);
+        radial-gradient(0.5px 0.5px at 10% 20%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 50% 80%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 90% 5%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 30% 30%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 70% 60%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 5% 95%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 95% 85%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 45% 15%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 80% 40%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 20% 75%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 60% 5%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 15% 80%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 85% 20%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 35% 55%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 75% 90%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 5% 45%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 55% 70%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 25% 10%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 65% 50%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 90% 30%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 12% 58%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 88% 78%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 38% 8%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 78% 38%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 18% 88%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 58% 18%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 98% 48%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 28% 68%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 68% 98%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 48% 28%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 8% 72%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 82% 12%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 32% 42%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 72% 82%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 22% 2%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 62% 62%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 2% 92%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 92% 22%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 42% 52%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 4% 34%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 54% 84%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 24% 14%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 74% 44%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 14% 74%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 64% 24%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 94% 54%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 34% 94%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 44% 4%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 84% 64%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 16% 36%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 56% 76%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 26% 96%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 76% 16%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 96% 66%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 36% 46%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 66% 86%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 46% 6%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 6% 69%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 69% 39%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 39% 99%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 99% 9%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 9% 59%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 59% 29%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 29% 89%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 89% 19%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 19% 49%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 49% 79%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 79% 9%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 3% 23%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 53% 83%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 23% 3%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 83% 53%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 13% 43%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 43% 93%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 93% 13%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 33% 63%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 63% 33%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 7% 87%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 87% 7%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 27% 57%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 57% 27%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 17% 77%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 77% 17%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 37% 97%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 97% 37%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 47% 67%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 67% 47%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 1% 51%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 51% 1%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 31% 81%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 81% 31%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 21% 71%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 71% 21%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 11% 91%, var(--text-main), transparent),
+        radial-gradient(0.5px 0.5px at 91% 11%, var(--text-main), transparent);
     background-size: 600px 600px;
     background-repeat: repeat;
     opacity: 0.6;
@@ -2266,14 +2266,14 @@ textarea.form-control {
     font-weight: 800;
     text-transform: uppercase;
     color: var(--primary);
-    opacity: 0.15;
+    opacity: 0.25;
     white-space: nowrap;
     letter-spacing: -0.05em;
     pointer-events: none;
     z-index: 0;
     line-height: 1;
     animation: footerFloat 6s ease-in-out infinite;
-    text-shadow: 0 0 40px rgba(224, 17, 95, 0.4);
+    text-shadow: 0 0 60px rgba(224, 17, 95, 0.5), 0 0 120px rgba(224, 17, 95, 0.3), 0 0 180px rgba(224, 17, 95, 0.2);
 }
 
 @keyframes footerFloat {
@@ -2297,12 +2297,12 @@ textarea.form-control {
     font-size: 30vw;
     font-weight: 800;
     color: var(--primary);
-    opacity: 0.15;
+    opacity: 0.25;
     pointer-events: none;
     z-index: 0;
     white-space: nowrap;
     letter-spacing: -0.05em;
-    text-shadow: 0 0 60px var(--glow), 0 0 120px rgba(224, 17, 95, 0.2);
+    text-shadow: 0 0 60px rgba(224, 17, 95, 0.5), 0 0 120px rgba(224, 17, 95, 0.3), 0 0 180px rgba(224, 17, 95, 0.2);
 }
 
 .footer-main-text {
@@ -2383,9 +2383,9 @@ textarea.form-control {
 }
 
 .social-link:hover {
-    color: var(--primary);
-    border-color: var(--primary);
-    box-shadow: 0 0 15px var(--glow);
+    color: var(--text-main);
+    border-color: var(--text-main);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
     transform: translateY(-3px);
 }
 
@@ -2473,7 +2473,7 @@ textarea.form-control {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
+    background: var(--text-main);
 }
 
 .accordion-item {
@@ -2488,14 +2488,14 @@ textarea.form-control {
 }
 
 .accordion-button:not(.collapsed) {
-    color: var(--primary);
-    background-color: rgba(224, 17, 95, 0.1);
+    color: var(--text-main);
+    background-color: rgba(0, 0, 0, 0.05);
     box-shadow: inset 0 -1px 0 var(--grid-line-strong);
 }
 
 .accordion-button:focus {
-    box-shadow: 0 0 15px var(--glow);
-    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    border-color: var(--text-main);
 }
 
 .accordion-body {
@@ -2525,7 +2525,7 @@ textarea.form-control {
 }
 
 .fit-title .fit-not {
-    color: var(--primary);
+    color: var(--text-main);
 }
 
 .fit-desc {
@@ -2578,7 +2578,7 @@ textarea.form-control {
 }
 
 .fit-icon-no {
-    background: #e0115f;
+    background: var(--text-main);
     color: #fff;
     border: none;
 }
@@ -2591,7 +2591,7 @@ textarea.form-control {
 }
 
 .fit-icon-no {
-    color: var(--primary);
+    color: var(--text-main);
     background: none !important;
     border: none !important;
     box-shadow: none !important;
@@ -2648,12 +2648,12 @@ textarea.form-control {
 }
 
 .fit-card-no {
-    border-color: var(--primary);
-    background: rgba(224, 17, 95, 0.03);
+    border-color: var(--text-main);
+    background: rgba(0, 0, 0, 0.03);
 }
 
 .fit-card-no h4 {
-    color: var(--primary);
+    color: var(--text-main);
 }
 
 .fit-icon-yes {
@@ -2663,9 +2663,9 @@ textarea.form-control {
 }
 
 .fit-icon-no {
-    color: #e0115f;
-    border: 2px solid #e0115f;
-    background: rgba(224, 17, 95, 0.08);
+    color: var(--text-main);
+    border: 2px solid var(--text-main);
+    background: rgba(0, 0, 0, 0.08);
 }
 
 .fit-col-title {
@@ -2708,12 +2708,12 @@ textarea.form-control {
 }
 
 .fit-card-no {
-    border-color: #e0115f;
-    background: rgba(224, 17, 95, 0.04);
+    border-color: var(--text-main);
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .fit-card-no h4 {
-    color: #e0115f;
+    color: var(--text-main);
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 0.4rem;
@@ -2726,9 +2726,9 @@ textarea.form-control {
 }
 
 .fit-card-no:hover {
-    background: rgba(224, 17, 95, 0.09);
-    box-shadow: 0 0 20px #e0115f33;
-    border-color: #e0115f;
+    background: rgba(0, 0, 0, 0.09);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--text-main);
 }
 
 @media (max-width: 991px) {
@@ -2807,7 +2807,7 @@ textarea.form-control {
 }
 
 .accordion-button:hover {
-    color: var(--primary);
+    color: var(--text-main);
     padding-left: 10px;
 }
 
@@ -2817,7 +2817,7 @@ textarea.form-control {
 }
 
 .accordion-button:not(.collapsed) {
-    color: var(--primary);
+    color: var(--text-main);
     background-color: transparent;
     box-shadow: none;
     padding-left: 10px;
@@ -2843,7 +2843,7 @@ textarea.form-control {
 
 .accordion-button:not(.collapsed) .accordion-icon {
     transform: rotate(45deg);
-    color: var(--primary);
+    color: var(--text-main);
 }
 
 .accordion-body {
@@ -2898,7 +2898,7 @@ textarea.form-control {
     height: 25px;
     right: -17px;
     background-color: var(--surface);
-    border: 4px solid var(--primary);
+    border: 4px solid var(--text-main);
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -2971,7 +2971,7 @@ textarea.form-control {
     top: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(180deg, var(--primary), transparent);
+    background: linear-gradient(180deg, var(--text-main), transparent);
     border-radius: 2px;
 }
 
@@ -2993,7 +2993,7 @@ textarea.form-control {
     bottom: -10px;
     width: 60px;
     height: 3px;
-    background: var(--primary);
+    background: var(--text-main);
     border-radius: 2px;
     box-shadow: 0 0 10px var(--glow);
 }
@@ -3027,7 +3027,7 @@ textarea.form-control {
 }
 
 .about-text:hover::before {
-    background: var(--primary);
+    background: var(--text-main);
     box-shadow: 0 0 10px var(--glow);
 }
 
@@ -3082,7 +3082,7 @@ textarea.form-control {
     padding: 8rem 0;
     position: relative;
     z-index: 2;
-    background: radial-gradient(circle at 10% 20%, rgba(224, 17, 95, 0.05), transparent 30%);
+    background: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.05), transparent 30%);
 }
 
 .why-us-left {
@@ -3099,7 +3099,7 @@ textarea.form-control {
 }
 
 .why-us-title .highlight {
-    color: var(--primary);
+    color: var(--text-main);
     display: inline-block;
     position: relative;
 }
@@ -3111,7 +3111,7 @@ textarea.form-control {
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: var(--primary);
+    background-color: var(--text-main);
     border-radius: 2px;
 }
 
@@ -3132,10 +3132,10 @@ textarea.form-control {
 }
 
 .tag:hover {
-    background: rgba(224, 17, 95, 0.15);
-    border-color: var(--primary);
+    background: rgba(0, 0, 0, 0.15);
+    border-color: var(--text-main);
     transform: translateY(-3px);
-    box-shadow: 0 0 15px var(--glow);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
 .why-us-right {
@@ -3176,7 +3176,7 @@ textarea.form-control {
 }
 
 .principle-item:hover {
-    border-bottom-color: var(--primary);
+    border-bottom-color: var(--text-main);
     transform: translateX(10px);
 }
 
@@ -3190,7 +3190,7 @@ textarea.form-control {
 }
 
 .principle-item:hover .principle-heading {
-    color: var(--primary);
+    color: var(--text-main);
 }
 
 .principle-desc {
@@ -3218,7 +3218,7 @@ textarea.form-control {
     transform: translateY(-50%);
     width: 4px;
     height: 60px;
-    background: var(--primary);
+    background: var(--text-main);
     border-radius: 2px;
     box-shadow: 0 0 15px var(--glow);
 }
@@ -3280,7 +3280,7 @@ textarea.form-control {
 }
 
 .tge-phase:hover {
-    border-bottom-color: var(--primary);
+    border-bottom-color: var(--text-main);
     transform: translateY(-8px) scale(1.02);
 }
 
@@ -3329,7 +3329,7 @@ textarea.form-control {
     content: '•';
     position: absolute;
     left: 0;
-    color: var(--primary);
+    color: var(--text-main);
     font-size: 1.2rem;
     transition: all 0.3s ease;
 }
@@ -3358,7 +3358,7 @@ textarea.form-control {
     transform: translateY(-50%);
     width: 4px;
     height: 60px;
-    background: var(--primary);
+    background: var(--text-main);
     border-radius: 2px;
     box-shadow: 0 0 15px var(--glow);
 }
@@ -3438,7 +3438,7 @@ textarea.form-control {
     transform: translateY(-50%);
     width: 6px;
     height: 6px;
-    background: var(--primary);
+    background: var(--text-main);
     border-radius: 50%;
     box-shadow: 0 0 10px var(--glow);
 }
@@ -3460,7 +3460,7 @@ textarea.form-control {
 }
 
 .framework-card:hover {
-    border-bottom-color: var(--primary);
+    border-bottom-color: var(--text-main);
     transform: translateX(10px);
 }
 
@@ -3468,21 +3468,21 @@ textarea.form-control {
     font-family: var(--font-display);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--text-main);
     margin-bottom: 0.5rem;
     line-height: 1;
     transition: all 0.3s ease;
     display: inline-block;
     padding: 0.3rem 0.8rem;
-    background: rgba(224, 17, 95, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    border: 1px solid rgba(224, 17, 95, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .framework-card:hover .framework-number {
-    background: rgba(224, 17, 95, 0.2);
-    border-color: var(--primary);
-    box-shadow: 0 0 15px var(--glow);
+    background: rgba(0, 0, 0, 0.2);
+    border-color: var(--text-main);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
 .framework-heading {
@@ -3495,7 +3495,7 @@ textarea.form-control {
 }
 
 .framework-card:hover .framework-heading {
-    color: var(--primary);
+    color: var(--text-main);
 }
 
 .framework-text {
@@ -3586,7 +3586,7 @@ textarea.form-control {
 .aim-card:hover,
 .principle-card:hover,
 .why-card:hover {
-    border-bottom-color: var(--primary);
+    border-bottom-color: var(--text-main);
     transform: translateX(10px);
 }
 
