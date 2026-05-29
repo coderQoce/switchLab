@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cursor = document.querySelector('.custom-cursor');
     const cursorDot = document.querySelector('.custom-cursor-dot');
+    const hero = document.querySelector('.hero');
 
     if (cursor && cursorDot) {
         document.addEventListener('mousemove', (e) => {
@@ -10,6 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cursorDot.style.left = e.clientX + 'px';
             cursorDot.style.top = e.clientY + 'px';
+
+            // Check if cursor is in hero section
+            if (hero) {
+                const heroRect = hero.getBoundingClientRect();
+                if (e.clientY <= heroRect.bottom) {
+                    cursor.classList.add('in-hero');
+                    cursorDot.classList.add('in-hero');
+                } else {
+                    cursor.classList.remove('in-hero');
+                    cursorDot.classList.remove('in-hero');
+                }
+            }
         });
 
         // Add hover effect to interactive elements
@@ -21,6 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
             el.addEventListener('mouseleave', () => {
                 cursor.classList.remove('hover');
             });
+        });
+    }
+
+    // Navbar scroll detection for black background
+    const navbar = document.querySelector('.new-navbar');
+
+    if (navbar && hero) {
+        const heroHeight = hero.offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > heroHeight - 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
     }
 });
