@@ -3841,3 +3841,352 @@ textarea.form-control {
 .stat-card:nth-child(3) {
     animation-delay: 0.3s;
 }
+
+/* Center team cards on small screens */
+@media (max-width: 767px) {
+    .team-section .row {
+        justify-content: center;
+    }
+
+    .team-section .col-6 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .team-card {
+        max-width: 280px;
+    }
+}
+
+/* Comprehensive Responsive Styles for All Pages */
+
+/* Navbar responsive */
+@media (max-width: 991px) {
+    .new-navbar {
+        width: 95%;
+        top: 1rem;
+    }
+
+    .navbar-nav {
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+}
+
+/* Section headings responsive */
+@media (max-width: 768px) {
+    .section-heading {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .about-title {
+        font-size: 1.8rem;
+    }
+
+    .switch-labs-question {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-heading {
+        font-size: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .about-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Cards responsive */
+@media (max-width: 768px) {
+
+    .service-card,
+    .tech-card,
+    .principle-card,
+    .aim-card,
+    .why-card,
+    .framework-card,
+    .panel-card {
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Grid layouts responsive */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .aims-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .framework-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kol-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact section responsive */
+@media (max-width: 768px) {
+    .contact-item {
+        padding: 1.5rem;
+    }
+
+    .contact-label {
+        font-size: 0.75rem;
+    }
+
+    .contact-value {
+        font-size: 1rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* FAQ section responsive */
+@media (max-width: 768px) {
+    .accordion-button {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    .accordion-body {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+}
+
+/* Footer responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 0 2rem;
+    }
+
+    .footer-links {
+        gap: 1rem;
+    }
+
+    .footer-link {
+        font-size: 0.85rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
+
+/* About page specific responsive */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 4rem 0;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .framework-intro {
+        font-size: 0.95rem;
+    }
+
+    .tge-intro {
+        font-size: 0.95rem;
+    }
+
+    .why-intro {
+        font-size: 0.95rem;
+    }
+}
+
+/* Container padding responsive */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Button responsive */
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Roadmap responsive */
+@media (max-width: 768px) {
+    .roadmap-node {
+        padding: 1.5rem;
+    }
+
+    .node-title {
+        font-size: 1.1rem;
+    }
+
+    .node-period {
+        font-size: 0.75rem;
+    }
+
+    .roadmap-phase {
+        font-size: 0.8rem;
+    }
+}
+
+/* Problem cards responsive */
+@media (max-width: 768px) {
+    .problem-card {
+        padding: 1.5rem;
+    }
+
+    .problem-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .problem-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* Fit/Comparison cards responsive */
+@media (max-width: 768px) {
+    .fit-card {
+        padding: 1.5rem;
+    }
+
+    .fit-title {
+        font-size: 1.2rem;
+    }
+
+    .fit-icon-yes,
+    .fit-icon-no {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Timeline responsive */
+@media (max-width: 768px) {
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .timeline-title {
+        font-size: 1rem;
+    }
+
+    .timeline-period {
+        font-size: 0.75rem;
+    }
+}
+
+/* Stat items responsive */
+@media (max-width: 768px) {
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .stat-num {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+}
+
+/* Tags responsive */
+@media (max-width: 768px) {
+    .tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Scroll dots responsive */
+@media (max-width: 768px) {
+    .scroll-dots {
+        right: 0.5rem;
+    }
+
+    .scroll-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* KOL cards responsive */
+@media (max-width: 768px) {
+    .kol-card {
+        padding: 1.5rem;
+    }
+
+    .kol-name {
+        font-size: 1.1rem;
+    }
+
+    .kol-role {
+        font-size: 0.85rem;
+    }
+}
