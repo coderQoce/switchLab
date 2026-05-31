@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Switch Labs – Creators Bounty</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Bounty Page Specific Styles */
+    .bounty-page {
+      background: #000;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    /* Hero Glow Effect */
+    .hero-glow {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(224, 17, 95, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Badge Styling */
+    .bounty-badge {
+      background: rgba(224, 17, 95, 0.15);
+      border: 1px solid rgba(224, 17, 95, 0.4);
+      color: var(--primary);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      display: inline-block;
+    }
+
+    /* Stats Row */
+    .bounty-stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+    }
+
+    .bounty-stat {
+      flex: 1;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .bounty-stat:last-child {
+      border-right: none;
+    }
+
+    .bounty-stat-value {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+      text-shadow: 0 0 20px rgba(224, 17, 95, 0.4);
+    }
+
+    .bounty-stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    /* Form Card */
+    .bounty-form-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .bounty-form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+
+    .bounty-form-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .bounty-form-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    /* Form Inputs */
+    .bounty-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      color: #fff;
+      caret-color: #fff;
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      padding: 14px 16px 14px 44px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .bounty-input:focus {
+      border-color: var(--primary);
+      background: rgba(224, 17, 95, 0.08);
+      box-shadow: 0 0 20px rgba(224, 17, 95, 0.15);
+    }
+
+    .bounty-input::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .bounty-textarea {
+      padding-left: 16px;
+      resize: none;
+      min-height: 100px;
+    }
+
+    .bounty-input-wrap {
+      position: relative;
+    }
+
+    .bounty-input-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 18px;
+    }
+
+    .bounty-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* Section Divider */
+    .bounty-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .bounty-divider span {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .bounty-divider-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Submit Button */
+    .bounty-btn-submit {
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 16px 32px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      box-shadow: 0 0 30px rgba(224, 17, 95, 0.3);
+    }
+
+    .bounty-btn-submit:hover {
+      background: #b8104f;
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(224, 17, 95, 0.5);
+    }
+
+    .bounty-btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Success State */
+    .bounty-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      gap: 1rem;
+    }
+
+    .bounty-success.show {
+      display: flex;
+    }
+
+    .bounty-form-inner.hidden {
+      display: none;
+    }
+
+    .bounty-success-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(224, 17, 95, 0.15);
+      border: 2px solid rgba(224, 17, 95, 0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      box-shadow: 0 0 40px rgba(224, 17, 95, 0.3);
+    }
+
+    .bounty-success-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .bounty-success-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+
+    .bounty-success-ref {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      background: rgba(224, 17, 95, 0.1);
+      border: 1px solid rgba(224, 17, 95, 0.3);
+      padding: 10px 24px;
+      border-radius: 100px;
+      margin-top: 0.5rem;
+    }
+
+    .bounty-btn-reset {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-muted);
+      border-radius: 50px;
+      padding: 12px 28px;
+      font-family: var(--font-main);
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .bounty-btn-reset:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 20px rgba(224, 17, 95, 0.2);
+    }
+
+    /* Spotr Logo */
+    .spotr-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 200, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 200, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .spotr-logo:hover {
+      border-color: rgba(255, 200, 0, 0.8);
+      box-shadow: 0 0 20px rgba(255, 200, 0, 0.2);
+    }
+
+    .spotr-eye-svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .bounty-stats {
+        flex-direction: column;
+      }
+
+      .bounty-stat {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .bounty-stat:last-child {
+        border-bottom: none;
+      }
+
+      .bounty-form-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .hero-glow {
+        width: 100%;
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body class="bounty-page">
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+  <!-- Scroll Dots -->
+  <div class="scroll-dots">
+    <a href="#hero" class="scroll-dot active" data-section="hero" title="Top"></a>
+    <a href="#form" class="scroll-dot" data-section="form" title="Form"></a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top new-navbar scrolled">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/logo.jpg" alt="The Switch Labs Logo" class="logo-img">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="about-us.html">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="core-problem.html">CORE PROBLEMS</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">SERVICES</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#roadmap">TGE</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#technology">TECH</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#team">TEAM</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">CONTACT</a></li>
+          <li class="nav-item"><a class="nav-link active" href="bounty.html">BOUNTY</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero" style="padding-top: 10rem; background: #000;">
+      <div class="hero-glow"></div>
+      <div class="system-grid"></div>
+
+      <div class="container position-relative" style="z-index: 2;">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <p class="hero-eyebrow">⚡ Submit Your Entry</p>
+            <h1 class="hero-main-title"
+              style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem;">
+              The Switch Labs<br>
+              <span style="color: var(--primary); text-shadow: 0 0 40px rgba(224, 17, 95, 0.5);">Creators Bounty</span>
+            </h1>
+            <p class="hero-description" style="max-width: 550px; margin: 0 auto 2rem; color: rgba(255,255,255,0.6);">
+              Showcase your creativity. Submit your work and compete for rewards in our exclusive creators challenge.
+            </p>
+
+            <!-- Spotr Collab -->
+            <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
+              <span class="text-uppercase" style="font-size: 11px; color: var(--text-muted); letter-spacing: 0.1em;">In
+                partnership with</span>
+              <div class="spotr-logo">
+                <svg class="spotr-eye-svg" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 6C7.5 6 3 13 3 13C3 13 7.5 20 13 20C18.5 20 23 13 23 13C23 13 18.5 6 13 6Z"
+                    stroke="#FFD700" stroke-width="1.5" stroke-linejoin="round" />
+                  <circle cx="13" cy="13" r="3.5" stroke="#FFD700" stroke-width="1.5" />
+                  <polygon points="12,11.5 15,13 12,14.5" fill="#FFD700" />
+                </svg>
+              </div>
+              <span class="text-uppercase"
+                style="font-size: 11px; color: var(--text-muted); letter-spacing: 0.1em;">Spotr</span>
+            </div>
+
+            <!-- Stats -->
+            <div class="bounty-stats">
+              <div class="bounty-stat">
+                <span class="bounty-stat-value">Open</span>
+                <span class="bounty-stat-label">Bounty Status</span>
+              </div>
+              <div class="bounty-stat">
+                <span class="bounty-stat-value">Creators</span>
+                <span class="bounty-stat-label">Bounty Type</span>
+              </div>
+              <div class="bounty-stat">
+                <span class="bounty-stat-value">2</span>
+                <span class="bounty-stat-label">Links Required</span>
+              </div>
+              <div class="bounty-stat prize-stat">
+                <span class="bounty-stat-value"
+                  style="color: var(--primary); text-shadow: 0 0 20px rgba(224, 17, 95, 0.4);">$1,500</span>
+                <span class="bounty-stat-label">Prize Pool <span style="color: var(--primary);">(10 x
+                    $100)</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form" style="padding-bottom: 6rem; background: #000;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="bounty-form-card">
+              <div class="bounty-form-inner" id="formInner">
+                <h2 class="bounty-form-title">Submit Your Entry</h2>
+                <p class="bounty-form-subtitle">Fill in all fields below. All submissions are reviewed by the Switch
+                  Labs team.</p>
+
+                <form id="bountyForm">
+                  <!-- Personal Details -->
+                  <div class="bounty-divider">
+                    <div class="bounty-divider-line"></div>
+                    <span>Personal Details</span>
+                    <div class="bounty-divider-line"></div>
+                  </div>
+
+                  <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                      <label class="bounty-label">Full Name</label>
+                      <div class="bounty-input-wrap">
+                        <i class="ti ti-user bounty-input-icon"></i>
+                        <input type="text" class="bounty-input" id="fullname" placeholder="Your full name" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="bounty-label">Twitter / X Handle</label>
+                      <div class="bounty-input-wrap">
+                        <i class="ti ti-brand-x bounty-input-icon"></i>
+                        <input type="text" class="bounty-input" id="twitter" placeholder="@yourhandle">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                      <label class="bounty-label">Discord Username</label>
+                      <div class="bounty-input-wrap">
+                        <i class="ti ti-brand-discord bounty-input-icon"></i>
+                        <input type="text" class="bounty-input" id="discord" placeholder="username#0000 or username">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="bounty-label">Wallet Address</label>
+                      <div class="bounty-input-wrap">
+                        <i class="ti ti-wallet bounty-input-icon"></i>
+                        <input type="text" class="bounty-input" id="wallet" placeholder="0x... or your wallet address">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Submission Links -->
+                  <div class="bounty-divider">
+                    <div class="bounty-divider-line"></div>
+                    <span>Submission Links</span>
+                    <div class="bounty-divider-line"></div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="bounty-label">Social Media Post Link</label>
+                    <div class="bounty-input-wrap">
+                      <i class="ti ti-share bounty-input-icon"></i>
+                      <input type="url" class="bounty-input" id="social-link"
+                        placeholder="https://twitter.com/... or TikTok, IG, etc.">
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="bounty-label">Submission Link</label>
+                    <div class="bounty-input-wrap">
+                      <i class="ti ti-link bounty-input-icon"></i>
+                      <input type="url" class="bounty-input" id="submission-link"
+                        placeholder="https://... (your main bounty submission)">
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <label class="bounty-label">Additional Notes <span
+                        style="opacity:0.4; font-size:10px; font-weight:400;">(optional)</span></label>
+                    <textarea class="bounty-input bounty-textarea" id="notes" rows="3"
+                      placeholder="Anything else you'd like the Switch Labs team to know about your entry..."></textarea>
+                  </div>
+
+                  <!-- Submit -->
+                  <button type="button" class="bounty-btn-submit" id="submitBtn" onclick="handleSubmit()">
+                    <i class="ti ti-send"></i>
+                    Submit My Entry
+                  </button>
+                </form>
+              </div>
+
+              <!-- Success State -->
+              <div class="bounty-success" id="successOverlay">
+                <div class="bounty-success-icon">
+                  <i class="ti ti-check"></i>
+                </div>
+                <p class="bounty-success-title">Entry Submitted!</p>
+                <p class="bounty-success-sub">Your submission has been received. The Switch Labs team will review it and
+                  reach out via your Discord or Twitter handle.</p>
+                <div class="bounty-success-ref" id="refCode"></div>
+                <button type="button" class="bounty-btn-reset" onclick="resetForm()">Submit Another Entry</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="footer-header">
+        <div class="footer-bg-large">SWITCH</div>
+      </div>
+      <div class="container">
+        <div class="row gy-6">
+          <div class="col-lg-4">
+            <div class="footer-brand">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <img src="assets/logo1.jpg" alt="Logo" class="footer-logo">
+                <span class="h4 mb-0 fw-bold">SWITCH LABS</span>
+              </div>
+              <p class="footer-desc">Web3 agency specializing in helping cryptocurrency and DeFi projects
+                achieve sustainable growth through Strategic Marketing, Community Building, and Brand
+                Development.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="footer-heading">COMPANY</h5>
+            <ul class="footer-links">
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#team">Team</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="footer-heading">GET IN TOUCH</h5>
+            <div class="footer-social-links">
+              <a href="#" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                  </path>
+                </svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                  </path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom">
+          <p class="mb-0">&copy; 2026 SWITCH LABS. All rights reserved.</p>
+          <div class="footer-social-handle" style="color: black; ">X <a
+              href="https://x.com/theswitchlabs?s=21">TheSwitchLabs</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function handleSubmit() {
+      const fullname = document.getElementById('fullname').value.trim();
+      const twitter = document.getElementById('twitter').value.trim();
+      const discord = document.getElementById('discord').value.trim();
+      const wallet = document.getElementById('wallet').value.trim();
+      const socialLink = document.getElementById('social-link').value.trim();
+      const submissionLink = document.getElementById('submission-link').value.trim();
+
+      const errors = [];
+      if (!fullname) errors.push('Full Name');
+      if (!twitter) errors.push('Twitter / X Handle');
+      if (!discord) errors.push('Discord Username');
+      if (!wallet) errors.push('Wallet Address');
+      if (!socialLink) errors.push('Social Media Post Link');
+      if (!submissionLink) errors.push('Submission Link');
+
+      if (errors.length > 0) {
+        highlightErrors(errors);
+        return;
+      }
+
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="ti ti-loader-2" style="animation:spin 1s linear infinite"></i> Submitting...';
+
+      setTimeout(() => {
+        const ref = 'SWL-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+        document.getElementById('refCode').textContent = 'Reference: ' + ref;
+        document.getElementById('formInner').classList.add('hidden');
+        document.getElementById('successOverlay').classList.add('show');
+      }, 1800);
+    }
+
+    function highlightErrors(errors) {
+      const map = {
+        'Full Name': 'fullname',
+        'Twitter / X Handle': 'twitter',
+        'Discord Username': 'discord',
+        'Wallet Address': 'wallet',
+        'Social Media Post Link': 'social-link',
+        'Submission Link': 'submission-link',
+      };
+      Object.values(map).forEach(id => {
+        document.getElementById(id).style.borderColor = '';
+      });
+      errors.forEach(e => {
+        const el = document.getElementById(map[e]);
+        if (el) {
+          el.style.borderColor = '#ff4444';
+          el.style.animation = 'shake 0.35s';
+          setTimeout(() => el.style.animation = '', 350);
+        }
+      });
+      const firstId = map[errors[0]];
+      document.getElementById(firstId)?.focus();
+    }
+
+    function resetForm() {
+      ['fullname', 'twitter', 'discord', 'wallet', 'social-link', 'submission-link', 'notes'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+      document.getElementById('successOverlay').classList.remove('show');
+      document.getElementById('formInner').classList.remove('hidden');
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = false;
+      btn.innerHTML = '<i class="ti ti-send"></i> Submit My Entry';
+    }
+  </script>
+
+  <style>
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-6px);
+      }
+
+      75% {
+        transform: translateX(6px);
+      }
+    }
+  </style>
+</body>
+
+</html>

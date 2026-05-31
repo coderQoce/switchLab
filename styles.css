@@ -266,7 +266,7 @@ section {
     background: transparent;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: none;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     position: fixed;
@@ -683,6 +683,10 @@ section {
     border-radius: 50px;
     transition: color 0.4s, box-shadow 0.4s, background 0.4s;
     overflow: hidden;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn::before {
@@ -978,7 +982,6 @@ textarea.form-control {
 
 .contact-form .btn {
     width: 100%;
-    padding: 1rem;
     margin-top: 1rem;
 }
 
