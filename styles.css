@@ -4584,3 +4584,100 @@ img {
         min-height: -webkit-fill-available;
     }
 }
+
+/* ========================================
+   ADDITIONAL RESPONSIVE FIXES
+   ======================================== */
+
+/* Prevent horizontal overflow */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Better mobile container spacing */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    /* Fix hero text sizing */
+    .hero-main-title {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Ensure buttons don't overflow */
+    .btn {
+        white-space: nowrap;
+    }
+    
+    /* Fix navbar brand sizing */
+    .navbar-brand img {
+        max-height: 40px;
+    }
+    
+    /* Better form input sizing on mobile */
+    .form-control {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Stack grid items properly */
+    .row > [class*="col-"] {
+        margin-bottom: 1rem;
+    }
+    
+    /* Fix footer spacing */
+    .footer-section {
+        padding: 3rem 0 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Even smaller screens */
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    h1, h2, h3 {
+        word-wrap: break-word;
+    }
+    
+    /* Adjust scroll dots for small screens */
+    .scroll-indicator {
+        right: 0.5rem;
+    }
+    
+    .scroll-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Fix for tables on mobile */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Ensure videos are responsive */
+video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for modals on mobile */
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+}
