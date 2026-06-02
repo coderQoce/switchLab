@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwitchDrops Bounty | Create & Win</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #07070a;
+      --surface: #0f0f14;
+      --text: #ffffff;
+      --text-muted: #6b6b7b;
+      --accent: #e0115f;
+      --accent-glow: rgba(224, 17, 95, 0.3);
+      --accent-gradient: linear-gradient(135deg, #e0115f, #ff3b7f);
+      --video-color: #3b82f6;
+      --write-color: #10b981;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px var(--accent-glow);
+      }
+
+      50% {
+        box-shadow: 0 0 40px var(--accent-glow), 0 0 60px rgba(224, 17, 95, 0.1);
+      }
+    }
+
+    body {
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      padding: 2.5rem 2rem;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      background: #000000;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .logo-img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 12px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes gradientShift {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .logo span {
+      font-weight: 800;
+      font-size: 1.1rem;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .vertical-text {
+      position: absolute;
+      bottom: 8rem;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      font-size: 7rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-family: 'Inter', 'Arial Black', sans-serif;
+      color: #e0115f;
+      text-shadow: 0 0 40px rgba(224, 17, 95, 0.5), 0 0 80px rgba(224, 17, 95, 0.3);
+      animation: verticalFloat 4s ease-in-out infinite, textGlow 2s ease-in-out infinite alternate;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    @keyframes verticalFloat {
+
+      0%,
+      100% {
+        transform: translateX(-50%) rotate(-90deg) translateX(0);
+      }
+
+      50% {
+        transform: translateX(-50%) rotate(-90deg) translateX(-15px);
+      }
+    }
+
+    @keyframes textGlow {
+      0% {
+        text-shadow: 0 0 40px rgba(224, 17, 95, 0.5), 0 0 80px rgba(224, 17, 95, 0.3);
+      }
+
+      100% {
+        text-shadow: 0 0 60px rgba(224, 17, 95, 0.8), 0 0 100px rgba(224, 17, 95, 0.5), 0 0 140px rgba(224, 17, 95, 0.3);
+      }
+    }
+
+    .close-btn {
+      display: none;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .nav-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin: 2.5rem 0 1rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      left: -1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 0;
+      background: var(--accent-gradient);
+      transition: height 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+      padding-left: 0.5rem;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+      height: 20px;
+    }
+
+    .main {
+      padding: 3rem 5rem;
+      max-width: none;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    .mobile-header {
+      display: none;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    .menu-btn {
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .menu-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .alert {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+      animation: fadeInUp 0.6s ease-out 0.1s both;
+    }
+
+    .alert i {
+      animation: pulse 1.5s infinite;
+    }
+
+    .hero {
+      margin-bottom: 5rem;
+      animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+
+    .hero-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+
+    .badge {
+      background: var(--accent-gradient);
+      padding: 0.4rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-radius: 50px;
+      animation: glow 2s infinite;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 span {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: block;
+    }
+
+    .desc {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--accent-gradient);
+      padding: 1rem 2rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      animation: glow 2s infinite;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(224, 17, 95, 0.3);
+    }
+
+    /* Prize Cards */
+    .prizes-section {
+      margin-bottom: 5rem;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent);
+    }
+
+    .prize-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .prize-card {
+      padding: 2rem 0;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .prize-card:hover {
+      padding-left: 1rem;
+    }
+
+    .prize-card:last-child {
+      border-bottom: none;
+    }
+
+    .prize-icon {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .prize-icon i {
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+    }
+
+    .prize-amount {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .prize-card.video .prize-amount {
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .prize-card.write .prize-amount {
+      background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .prize-label {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .winners-row {
+      display: flex;
+      gap: -8px;
+      margin-top: 1rem;
+    }
+
+    .winner-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(224, 17, 95, 0.3), rgba(255, 59, 127, 0.3));
+      border: 2px solid var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: white;
+      margin-left: -8px;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    .winner-avatar:first-child {
+      margin-left: 0;
+      animation-delay: 0s;
+    }
+
+    .winner-avatar:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .winner-avatar:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .winner-avatar:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    .winner-avatar:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+
+    .winners-text {
+      margin-left: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+    }
+
+    /* Form Section */
+    .form-section {
+      padding: 3rem 0;
+      animation: fadeInUp 1.2s ease-out 0.6s both;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 3rem;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .form-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .form-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .field {
+      position: relative;
+    }
+
+    .field.full {
+      grid-column: span 2;
+    }
+
+    label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      transition: color 0.3s;
+    }
+
+    .field:focus-within label {
+      color: var(--accent);
+    }
+
+    input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.75rem 0;
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-bottom-color: var(--accent);
+    }
+
+    input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-gradient);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 3rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 4rem;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+
+    @media (max-width: 991px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: fixed;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        width: 280px;
+        background: #000000;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .close-btn {
+        display: block;
+      }
+
+      .mobile-header {
+        display: flex;
+      }
+
+      .main {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .prize-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: span 1;
+      }
+
+      .form-section {
+        padding: 2rem;
+      }
+
+      .vertical-text {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <button class="close-btn" onclick="closeSidebar()">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="logo">
+        <img src="assets/logo.jpg" alt="Switch Labs" class="logo-img">
+        <span>SwitchDrops</span>
+      </div>
+      <nav>
+        <div class="nav-title">DISCOVER</div>
+        <a href="../index.html" class="nav-link"><i data-lucide="home"></i> Home</a>
+        <a href="../about-us.html" class="nav-link"><i data-lucide="info"></i> About Us</a>
+        <a href="../core-problem.html" class="nav-link"><i data-lucide="alert-triangle"></i> Core Problems</a>
+        <a href="../index.html#services" class="nav-link"><i data-lucide="briefcase"></i> Services</a>
+        <div class="nav-title">CAMPAIGN</div>
+        <a href="index.html" class="nav-link active"><i data-lucide="trophy"></i> Bounty</a>
+        <div class="nav-title">SUPPORT</div>
+        <a href="../index.html#contact" class="nav-link"><i data-lucide="mail"></i> Contact</a>
+      </nav>
+      <div class="vertical-text">switch</div>
+    </aside>
+    <main class="main">
+      <div class="mobile-header">
+        <button class="menu-btn" onclick="toggleSidebar()">
+          <i data-lucide="menu"></i>
+        </button>
+        <span>SwitchDrops Bounty</span>
+      </div>
+
+      <div class="alert">
+        <i data-lucide="flame"></i>
+        <span>SwitchDrops is heating up — Submit now!</span>
+      </div>
+
+      <div class="hero">
+        <div class="hero-header">
+          <img src="assets/logo.jpg" alt="Switch Labs">
+          <span class="badge">Active Campaign</span>
+        </div>
+        <h1>Create Content.<br><span>Win Big.</span></h1>
+        <p class="desc">Submit your video or written content about Switch Labs. Two categories, amazing prizes. Join the
+          creator revolution.</p>
+        <a href="#form" class="btn-primary">
+          <i data-lucide="zap"></i> Submit Your Entry
+        </a>
+      </div>
+
+      <div class="prizes-section">
+        <div class="section-header">
+          <h2>Prize Categories</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="prize-cards">
+          <div class="prize-card video">
+            <div class="prize-icon"><i data-lucide="video"></i> Video Content</div>
+            <div class="prize-amount">$900</div>
+            <div class="winners-row">
+              <div class="winner-avatar">1</div>
+              <div class="winner-avatar">2</div>
+              <div class="winner-avatar">3</div>
+              <div class="winner-avatar">4</div>
+              <div class="winner-avatar">5</div>
+              <span class="winners-text">5 Winners</span>
+            </div>
+          </div>
+          <div class="prize-card write">
+            <div class="prize-icon"><i data-lucide="file-text"></i> Written Content</div>
+            <div class="prize-amount">$600</div>
+            <div class="winners-row">
+              <div class="winner-avatar">1</div>
+              <div class="winner-avatar">2</div>
+              <div class="winner-avatar">3</div>
+              <div class="winner-avatar">4</div>
+              <div class="winner-avatar">5</div>
+              <span class="winners-text">5 Winners</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" id="form">
+        <div class="form-header">
+          <h2>Submit Your Entry</h2>
+          <p>Entries reviewed within 48 hours. Good luck!</p>
+        </div>
+        <form id="bountyForm" action="mailto:niphermedave@gmail.com" method="POST" enctype="text/plain">
+          <div class="form-grid">
+            <div class="field">
+              <label>Full Name</label>
+              <input type="text" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="field full">
+              <label>Video Content Link (optional)</label>
+              <input type="url" name="video_link" placeholder="https://youtube.com/... or https://tiktok.com/...">
+            </div>
+            <div class="field full">
+              <label>Written Content Link (optional)</label>
+              <input type="url" name="writeup_link" placeholder="https://docs.google.com/... or blog link">
+            </div>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i data-lucide="send"></i> Submit
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <p>© 2026 SWITCH LABS — All rights reserved. Submissions go to niphermedave@gmail.com</p>
+  </footer>
+  <script>
+    lucide.createIcons();
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSidebar(); });
+  </script>
+</body>
+
+</html>
