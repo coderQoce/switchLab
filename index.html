@@ -1169,16 +1169,24 @@
         // Scroll to section based on current pathname
         function scrollToSectionFromPath() {
             const path = window.location.pathname;
+            console.log('Current path:', path);
             const sectionId = pathToSection[path];
+            console.log('Section ID:', sectionId);
 
             if (sectionId) {
                 const section = document.getElementById(sectionId);
+                console.log('Section element:', section);
                 if (section) {
                     // Small delay to ensure page is fully loaded
                     setTimeout(() => {
                         section.scrollIntoView({ behavior: 'smooth' });
+                        console.log('Scrolled to:', sectionId);
                     }, 100);
+                } else {
+                    console.log('Section not found in DOM');
                 }
+            } else {
+                console.log('No mapping for this path');
             }
         }
 
