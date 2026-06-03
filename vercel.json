@@ -1,6 +1,4 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/core-problems",
@@ -29,6 +27,12 @@
     {
       "source": "/contact",
       "destination": "/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about-us.html"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
