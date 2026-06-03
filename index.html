@@ -221,15 +221,15 @@
 
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator">
-        <a href="#hero" class="scroll-dot active" data-section="hero" title="Home"></a>
-        <a href="#about-us" class="scroll-dot" data-section="about-us" title="About Us"></a>
-        <a href="#core-problem" class="scroll-dot" data-section="core-problem" title="Core Problem"></a>
-        <a href="#services" class="scroll-dot" data-section="services" title="Services"></a>
-        <a href="#roadmap" class="scroll-dot" data-section="roadmap" title="TGE"></a>
-        <a href="#technology" class="scroll-dot" data-section="technology" title="Technology"></a>
-        <a href="#team" class="scroll-dot" data-section="team" title="Team"></a>
-        <a href="#faq" class="scroll-dot" data-section="faq" title="FAQ"></a>
-        <a href="#contact" class="scroll-dot" data-section="contact" title="Contact"></a>
+        <a href="/" class="scroll-dot active" data-section="hero" title="Home"></a>
+        <a href="/about" class="scroll-dot" data-section="about-us" title="About Us"></a>
+        <a href="/core-problems" class="scroll-dot" data-section="core-problem" title="Core Problem"></a>
+        <a href="/services" class="scroll-dot" data-section="services" title="Services"></a>
+        <a href="/roadmap" class="scroll-dot" data-section="roadmap" title="TGE"></a>
+        <a href="/technology" class="scroll-dot" data-section="technology" title="Technology"></a>
+        <a href="/team" class="scroll-dot" data-section="team" title="Team"></a>
+        <a href="/faq" class="scroll-dot" data-section="faq" title="FAQ"></a>
+        <a href="/contact" class="scroll-dot" data-section="contact" title="Contact"></a>
     </div>
 
     <div id="loader">
@@ -258,11 +258,11 @@
             <a href="index.html" class="sidebar-nav-link active"><i data-lucide="home"></i> Home</a>
             <!-- <a href="about-us.html" class="sidebar-nav-link"><i data-lucide="info"></i> About Us</a> -->
             <a href="core-problem.html" class="sidebar-nav-link"><i data-lucide="alert-triangle"></i> Core Problems</a>
-            <a href="index.html#services" class="sidebar-nav-link"><i data-lucide="briefcase"></i> Services</a>
+            <a href="/services" class="sidebar-nav-link"><i data-lucide="briefcase"></i> Services</a>
             <div class="sidebar-nav-title">CAMPAIGN</div>
             <!-- <a href="bounty/index.html" class="sidebar-nav-link"><i data-lucide="trophy"></i> Bounty</a> -->
             <div class="sidebar-nav-title">SUPPORT</div>
-            <a href="index.html#contact" class="sidebar-nav-link"><i data-lucide="mail"></i> Contact</a>
+            <a href="/contact" class="sidebar-nav-link"><i data-lucide="mail"></i> Contact</a>
         </nav>
         <div class="sidebar-vertical-text">switch</div>
     </aside>
@@ -282,11 +282,11 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="about-us.html">ABOUT US</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="#core-problems">CORE PROBLEMS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/core-problems">CORE PROBLEMS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/services">SERVICES</a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#roadmap">TGE</a></li>
                     <li class="nav-item"><a class="nav-link" href="#technology">TECH</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="#team">TEAM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/team">TEAM</a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li> -->
                     <!-- <li class="nav-item"><a class="nav-link" href="bounty/index.html">Switch Drops</a></li> -->
@@ -325,7 +325,7 @@
                             </p>
                             <div class="hero-buttons">
                                 <a href="about-us.html" class="btn btn-filled"><span>Learn More</span></a>
-                                <a href="#contact" class="btn"><span>Join Us</span></a>
+                                <a href="/contact" class="btn"><span>Join Us</span></a>
                             </div>
                         </div>
                     </div>
@@ -858,7 +858,7 @@
                 <div class="faq-header-content">
                     <h3 class="faq-title">Questions, <span class="text-pink">Answered</span></h3>
                     <p class="faq-subtitle">Everything you need to know about Switch</p>
-                    <p class="faq-header-cta">Still curious? <a href="#" class="text-pink">Get In Touch</a></p>
+                    <p class="faq-header-cta">Still curious? <a href="/contact" class="text-pink">Get In Touch</a></p>
                 </div>
 
                 <div class="faq-container">
@@ -1065,8 +1065,8 @@
                         <h5 class="footer-heading">COMPANY</h5>
                         <ul class="footer-links">
                             <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#team">Team</a></li>
+                            <li><a href="/services">Services</a></li>
+                            <li><a href="/team">Team</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-4">
@@ -1150,6 +1150,55 @@
         // Close on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeSidebar();
+        });
+    </script>
+
+    <!-- Clean URL Section Scrolling -->
+    <script>
+        // Map pathnames to section IDs
+        const pathToSection = {
+            '/core-problems': 'core-problems',
+            '/services': 'services',
+            '/team': 'team',
+            '/roadmap': 'roadmap',
+            '/technology': 'technology',
+            '/faq': 'faq',
+            '/contact': 'contact'
+        };
+
+        // Scroll to section based on current pathname
+        function scrollToSectionFromPath() {
+            const path = window.location.pathname;
+            const sectionId = pathToSection[path];
+
+            if (sectionId) {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    // Small delay to ensure page is fully loaded
+                    setTimeout(() => {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', scrollToSectionFromPath);
+
+        // Handle smooth scrolling for clean URL links (prevent page reload on same page)
+        document.querySelectorAll('a[href^="/"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                const sectionId = pathToSection[href];
+
+                // If this is a same-page section link, scroll smoothly
+                if (sectionId && document.getElementById(sectionId)) {
+                    e.preventDefault();
+                    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+                    // Update URL without reloading
+                    window.history.pushState({}, '', href);
+                }
+            });
         });
     </script>
 </body>
